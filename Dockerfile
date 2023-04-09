@@ -42,7 +42,7 @@ RUN chmod -R go=u ${ANDROID_DEV_HOME} && \
 
 # Build benchmark_model
 WORKDIR /workspace/tensorflow
-COPY src/tensorflow .tf_configure.bazelrc .
+COPY src/tensorflow .tf_configure.bazelrc ./
 RUN bazel build -c opt --config=android_arm64 //tensorflow/lite/tools/benchmark:benchmark_model
 
 
