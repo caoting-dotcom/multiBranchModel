@@ -1,0 +1,8 @@
+[submodule "src/tensorflow"]
+	path = src/tensorflow
+	url = git@github.com:kaleid-liner/tensorflow.git
+[submodule "tensorflow"]
+	branch = sync-cpu-no-copy
+[submodule "src/mbm-pycls"]
+	path = src/mbm-pycls
+	url = git@github.com:kaleid-liner/mbm-pycls.git
