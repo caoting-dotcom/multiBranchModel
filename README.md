@@ -31,5 +31,5 @@ docker run -it -v configs:/data "mbm:latest" --name mbm-ae /bin/bash
 
 Then in docker:
 ```
-python src/tools/run_pipeline.py --configs /data --adb_host host.docker.internal
+python run_pipeline.py --configs /data --adb_host host.docker.internal
 ```
