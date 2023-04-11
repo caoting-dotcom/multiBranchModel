@@ -1,6 +1,6 @@
 ## Pull docker
 
-We provide a docker container for the artifact. It can be directly download by:
+We provide a docker container for the artifact. It can be directly downloaded by:
 
 ```
 docker image pull kalineid/nn_stretch
@@ -8,6 +8,7 @@ docker image pull kalineid/nn_stretch
 
 ## Build Docker (optional)
 
+If you want to build the docker yourself, run the following command:
 ```
 docker build -t kalineid/nn_stretch .
 ```
@@ -20,7 +21,15 @@ First, start the container with:
 docker run -it -v configs:/data --privileged -v /dev/bus/usb:/dev/bus/usb --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
-You should enter the container after the above command. Then, in docker:
+You should enter the container after the above command. Type in docker:
+
+```
+adb devices
+```
+
+to check if your Android device is successfully connected to the container.
+
+Then, in docker:
 
 ```
 python run_pipeline.py --configs /data
