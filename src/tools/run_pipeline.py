@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 from ppadb.client import Client as AdbClient
+from tensorflow.python.framework.ops import disable_eager_execution
 
 import pycls.core.config as config
 from pycls.core.config import cfg
@@ -29,7 +30,7 @@ def get_representative_dataset(input_shape):
 
 
 class MeasurementBasedLatencyPredictor:
-    def __init__(self, bin_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True):
+    def __init__(self, runtime_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True):
         self.host = host
         self.serial = serial
         self.device_tmp_dir = device_tmp_dir
@@ -42,8 +43,10 @@ class MeasurementBasedLatencyPredictor:
         else:
             self.device = self.client.devices()[0]
         
-        self.device_bin_path = os.path.join(device_tmp_dir, os.path.basename(bin_path))
-        self.push(bin_path, self.device_bin_path)
+        self.device_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model")
+        for filename in glob.glob(os.path.join(runtime_path, "*")):
+            self.push(filename, self.device_tmp_dir)
+        
         self.device.shell("chmod +x {}".format(self.device_bin_path))
 
     def gen_tflite_model(self, cfg_path, model_path):
@@ -51,7 +54,7 @@ class MeasurementBasedLatencyPredictor:
         config.load_cfg(cfg_path)
         config.assert_cfg()
         cfg.freeze()
-        im_size = cfg.TRAIN.IM_SIZE
+        im_size = 224
         cx = {"h": im_size, "w": im_size, "flops": 0, "params": 0, "acts": 0}
         cx = builders.get_model().complexity(cx)
         cx = {"flops": cx["flops"], "params": cx["params"], "acts": cx["acts"]}
@@ -87,6 +90,7 @@ class MeasurementBasedLatencyPredictor:
         self.device.push(host_path, device_path)
 
     def predict(self, device_model_path):
+        logger.info("Measure {} on device".format(device_model_path))
         use_gpu = "true" if "gpu" in cfg.ANYNET.DEVICES else "false"
         use_hexagon = "true" if "dsp" in cfg.ANYNET.DEVICES else "false"
 
@@ -107,6 +111,7 @@ class MeasurementBasedLatencyPredictor:
         if self.as_root:
             command = "su -c " + "'" + command + "'"
         res = self.device.shell(command)
+        print(res)
 
         return MeasurementBasedLatencyPredictor._parse(res)
 
@@ -123,19 +128,21 @@ def parse_args():
     parser.add_argument("--host_tmp_dir", type=str, default="")
     parser.add_argument("--device_tmp_dir", type=str, default="/data/local/tmp")
     parser.add_argument("--output_csv", type=str, default="")
-    parser.add_argument("--bin_path", type=str, default="/android/benchmark_model")
     parser.add_argument("--configs", type=str, default="")
     parser.add_argument("--no_root", dest="as_root", action="store_false")
+    parser.add_argument("--android_runtime", type=str, default="/android/runtime")
     parser.set_defaults(as_root=True)
     return parser.parse_args()
 
 
 def main():
     logger.setLevel(logging.INFO)
+    disable_eager_execution()
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+    tf.get_logger().setLevel(logging.ERROR)
+
     args = parse_args()
-
-    bin_path = args.bin_path
-
+    runtime_path = args.android_runtime
     host_tmp_dir = args.host_tmp_dir or os.path.join(args.workdir, "data")
     device_tmp_dir = args.device_tmp_dir
     Path(host_tmp_dir).mkdir(parents=True, exist_ok=True)
@@ -150,7 +157,7 @@ def main():
     else:
         configs = [configs_path]
 
-    predictor = MeasurementBasedLatencyPredictor(bin_path, args.device_tmp_dir, serial=serial, host=adb_host, as_root=as_root)
+    predictor = MeasurementBasedLatencyPredictor(runtime_path, args.device_tmp_dir, serial=serial, host=adb_host, as_root=as_root)
     
     results = []
     for cfg_path in configs:

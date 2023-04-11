@@ -48,6 +48,8 @@ RUN bazel build -c opt --config=android_arm64 //tensorflow/lite/tools/benchmark:
 
 FROM mosaicml/pytorch_vision:1.13.1_cu117-python3.10-ubuntu20.04
 COPY --from=tflite /android /workspace/tensorflow/bazel-bin/tensorflow/lite/tools/benchmark/benchmark_model /android/
+COPY --from=tflite /workspace/tensorflow/bazel-bin/tensorflow/lite/tools/benchmark/benchmark_model /android/runtime/
+COPY android_runtime /android/runtime
 
 WORKDIR /app/mbm-pycls
 COPY src/mbm-pycls ./
