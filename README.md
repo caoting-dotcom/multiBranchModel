@@ -1,3 +1,11 @@
+## Pull docker
+
+We provide a docker container for the artifact. It can be directly download by:
+
+```
+docker image pull kalineid/nn_stretch
+```
+
 ## Build Docker (optional)
 
 ```
@@ -6,18 +14,31 @@ docker build -t kalineid/nn_stretch .
 
 ## Evaluation
 
+First, start the container with:
+
 ```
 docker run -it -v configs:/data --privileged -v /dev/bus/usb:/dev/bus/usb --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
-Then, in docker:
+You should enter the container after the above command. Then, in docker:
+
 ```
 python run_pipeline.py --configs /data
 ```
 
+This script will automatically generate the model for the yaml configs in /data and profile the models on the Android device. The execution can consume over 30 mins.
+
+If you see this on terminal:
+
+```
+Results generated at /workspace/data/result.csv
+```
+
+Then the script is completed successfully. Go and check the result at `/workspace/data/result.csv` in the container. Sample outputs are provided at [this folder](sample_output).
+
 ### If your host is windows
 
-If your host is windows, you need to install adb first, then running on host:
+If your host is windows, you need to install adb first, then run on the host:
 
 ```
 adb -a -P 5037 nodaemon server
@@ -33,8 +54,6 @@ Then in docker:
 ```
 python run_pipeline.py --configs /data --adb_host host.docker.internal
 ```
-
-## Notes
 
 ## Code structure
 
