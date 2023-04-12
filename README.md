@@ -1,6 +1,10 @@
 This repo includes the implementation for paper "NN-Stretch: Automatic Neural Network Branching for
 Parallel Inference on Heterogeneous Multi-Processors"
 
+# End-to-End Pipeline
+
+We provide an **end-to-end video** to install the environment and run the pipeline. Check it [here](tutorial/end2end-pipeline.mp4)! You can also follow the following steps.
+
 ## Pull docker
 
 We provide a docker container for the artifact. It can be directly downloaded by:
