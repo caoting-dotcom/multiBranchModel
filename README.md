@@ -1,6 +1,8 @@
 This repo includes the implementation for paper "NN-Stretch: Automatic Neural Network Branching for
 Parallel Inference on Heterogeneous Multi-Processors"
 
+The following commands run on a host computer connected with an Android phone. The host computer OS prefers Ubuntu, since Docker on Windows may invoke some system issues. 
+
 ## Pull docker
 
 We provide a docker container for the artifact. It can be directly downloaded by:
@@ -13,16 +15,15 @@ docker image pull kalineid/nn_stretch
 
 If you want to build the docker yourself, run the following command. Or you can skip this step to the next step.
 ```
-git submodule update --init --recursive
 docker build -t kalineid/nn_stretch .
 ```
 
 ## Evaluation
 
-First install adb==1.0.41 on your host, then start the container with:
+First, start the container with:
 
 ```
-docker run -it -v $(pwd)/configs:/data --net host --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v configs:/data --privileged -v /dev/bus/usb:/dev/bus/usb --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 You should enter the container after the above command. Type in docker:
@@ -60,7 +61,7 @@ adb -a -P 5037 nodaemon server
 And start the container with:
 
 ```
-docker run -it -v absolute_path_to_configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 Then in docker:
