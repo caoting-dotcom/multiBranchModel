@@ -9,16 +9,18 @@ docker image pull kalineid/nn_stretch
 ## Build Docker (optional)
 
 If you want to build the docker yourself, run the following command:
+
 ```
+git submodule update --init --recursive
 docker build -t kalineid/nn_stretch .
 ```
 
 ## Evaluation
 
-First, start the container with:
+First install adb==1.0.41 on your host, then start the container with:
 
 ```
-docker run -it -v configs:/data --privileged -v /dev/bus/usb:/dev/bus/usb --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v $(pwd)/configs:/data --net host --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 You should enter the container after the above command. Type in docker:
@@ -56,7 +58,7 @@ adb -a -P 5037 nodaemon server
 And start the container with:
 
 ```
-docker run -it -v configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v absolute_path_to_configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 Then in docker:

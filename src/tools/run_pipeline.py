@@ -5,6 +5,7 @@ import logging
 import glob
 import os
 import re
+import gc
 
 import pandas as pd
 import numpy as np
@@ -20,7 +21,7 @@ from pycls.ir.constructor.tensorflow.anynet import anynet
 import pycls.core.builders as builders
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("NN-Stretch")
 
 
 def get_representative_dataset(input_shape):
@@ -102,6 +103,12 @@ class MeasurementBasedLatencyPredictor:
         logger.info("Pushing from {} to {}".format(host_path, device_path))
         self.device.push(host_path, device_path)
 
+    def _error_handle(res):
+        for line in res.splitlines():
+            if line.startswith("Could not create Hexagon delegate:"):
+                logger.error(line)
+
+
     def predict(self, device_model_path):
         logger.info("Measure {} on device".format(device_model_path))
         use_gpu = "true" if "gpu" in cfg.ANYNET.DEVICES else "false"
@@ -150,6 +157,7 @@ def parse_args():
 
 
 def main():
+    logging.basicConfig()
     logger.setLevel(logging.INFO)
     disable_eager_execution()
 
@@ -193,6 +201,7 @@ def main():
         df = pd.DataFrame.from_dict(results)
         df.to_csv(output_csv, index=False)
         logger.info("Result appended to {}".format(output_csv))
+        gc.collect()
 
     logger.info("Results generated at {}".format(output_csv))
 
