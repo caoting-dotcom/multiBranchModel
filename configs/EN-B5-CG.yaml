@@ -1,0 +1,40 @@
+MODEL:
+  TYPE: mbanynet
+  NUM_CLASSES: 1000
+  ACTIVATION_FUN: silu
+ANYNET:
+  STEM_TYPE: simple_stem_in
+  STEM_W: 48
+  STEM_K: 3
+  BLOCK_TYPE: mbconv
+  STRIDES: [[1, 1], [2, 2], [2, 2], [2, 2], [1, 1], [2, 2], [1, 1]]
+  DEPTHS: [[3, 3], [4, 4], [3, 4], [6, 6], [4, 4], [7, 5], [3, 2]]
+  WIDTHS: [[24, 24], [32, 32], [56, 48], [112, 96], [160, 136], [272, 232], [448, 384]]
+  BOT_MULS: [1, [6, 6], [6, 6], [6, 6], [6, 6], [6, 6], [6, 6]]
+  KERNELS: [3, 3, 5, 3, 5, 5, 3]
+  HEAD_W: 2048
+  DEVICES: ["cpu", "gpu"]
+  HEAD_DEVICE: "cpu"
+  STEM_DEVICE: "cpu"
+  MERGE_DEVICE: "cpu"
+  ORIGINAL_WIDTHS: [24, 40, 64, 128, 176, 304, 512]
+  SE_ON: False
+  MB_VER: 1
+  ACTIVATION_FUN: ["relu", "silu"]
+OPTIM:
+  LR_POLICY: cos
+  BASE_LR: 0.1
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 1e-5
+TRAIN:
+  DATASET: imagenet-tar
+  IM_SIZE: 456
+  BATCH_SIZE: 64
+TEST:
+  DATASET: imagenet-tar
+  IM_SIZE: 522
+  BATCH_SIZE: 48
+  POWERSAVE_LEVEL: 128
+NUM_GPUS: 8
+OUT_DIR: .

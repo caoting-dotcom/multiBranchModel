@@ -8,6 +8,8 @@ import re
 
 import pandas as pd
 import numpy as np
+from silence_tensorflow import silence_tensorflow
+silence_tensorflow()
 import tensorflow as tf
 from ppadb.client import Client as AdbClient
 from tensorflow.python.framework.ops import disable_eager_execution
@@ -45,7 +47,8 @@ class MeasurementBasedLatencyPredictor:
         
         self.device_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model")
         for filename in glob.glob(os.path.join(runtime_path, "*")):
-            self.push(filename, self.device_tmp_dir)
+            device_path = os.path.join(self.device_tmp_dir, os.path.basename(filename))
+            self.push(filename, device_path)
         
         self.device.shell("chmod +x {}".format(self.device_bin_path))
 
@@ -54,13 +57,13 @@ class MeasurementBasedLatencyPredictor:
         config.load_cfg(cfg_path)
         config.assert_cfg()
         cfg.freeze()
-        im_size = 224
-        cx = {"h": im_size, "w": im_size, "flops": 0, "params": 0, "acts": 0}
+        train_im_size = cfg.TRAIN.IM_SIZE
+        test_im_size = 224
+        cx = {"h": train_im_size, "w": train_im_size, "flops": 0, "params": 0, "acts": 0}
         cx = builders.get_model().complexity(cx)
-        cx = {"flops": cx["flops"], "params": cx["params"], "acts": cx["acts"]}
 
         if not os.path.exists(model_path):
-            input_shape = (im_size, im_size, 3)
+            input_shape = (test_im_size, test_im_size, 3)
             net = anynet(input_shape)
 
             converter = tf.lite.TFLiteConverter.from_keras_model(net)
@@ -78,12 +81,22 @@ class MeasurementBasedLatencyPredictor:
 
     @staticmethod
     def _parse(res: str):
-        pattern = "avg=(-?\d+(?:\.\d+)?)"
+        latency_pattern = "min=(-?\d+(?:\.\d+)?)"
+        power_pattern = "(-?\d+(?:\.\d+)?)"
+        latency = 0
+        power = 0
         for line in reversed(res.splitlines()):
             if line.startswith("Timings (microseconds):"):
-                m = re.search(pattern, line)
+                m = re.search(latency_pattern, line)
                 if m:
-                    return float(m[1])
+                    latency = float(m[1])
+            elif line.startswith("#Power (moving):"):
+                m = re.search(power_pattern, line)
+                if m:
+                    power = float(m[1])
+        
+        energy = power * latency
+        return latency, energy
 
     def push(self, host_path, device_path):
         logger.info("Pushing from {} to {}".format(host_path, device_path))
@@ -93,12 +106,13 @@ class MeasurementBasedLatencyPredictor:
         logger.info("Measure {} on device".format(device_model_path))
         use_gpu = "true" if "gpu" in cfg.ANYNET.DEVICES else "false"
         use_hexagon = "true" if "dsp" in cfg.ANYNET.DEVICES else "false"
+        powersave_level = cfg.TEST.POWERSAVE_LEVEL
 
         command = (
             "taskset f0 {} "
             "--graph={} "
-            "--use_gpu={} "
             "--use_hexagon={} "
+            "--use_gpu={} "
             "--num_threads=4 "
             "--use_xnnpack=false "
             "--enable_op_profiling=true "
@@ -106,12 +120,12 @@ class MeasurementBasedLatencyPredictor:
             "--warmup_min_secs=0 "
             "--min_secs=0 "
             "--warmup_runs=5 "
-            "--num_runs=50".format(self.device_bin_path, device_model_path, use_gpu, use_hexagon)
+            "--num_runs=50 "
+            "--hexagon_powersave_level={}".format(self.device_bin_path, device_model_path, use_hexagon, use_gpu, powersave_level)
         )
         if self.as_root:
             command = "su -c " + "'" + command + "'"
         res = self.device.shell(command)
-        print(res)
 
         return MeasurementBasedLatencyPredictor._parse(res)
 
@@ -138,8 +152,6 @@ def parse_args():
 def main():
     logger.setLevel(logging.INFO)
     disable_eager_execution()
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-    tf.get_logger().setLevel(logging.ERROR)
 
     args = parse_args()
     runtime_path = args.android_runtime
@@ -172,15 +184,16 @@ def main():
         device_model_path = os.path.join(device_tmp_dir, model_basename)
         predictor.push(model_path, device_model_path)
 
-        latency = predictor.predict(device_model_path)
+        latency, energy = predictor.predict(device_model_path)
         results.append({
             "cfg": cfg_path,
             "latency": latency,
-            "energy": 0,
+            "energy": energy,
         })
+        df = pd.DataFrame.from_dict(results)
+        df.to_csv(output_csv, index=False)
+        logger.info("Result appended to {}".format(output_csv))
 
-    df = pd.DataFrame.from_dict(results)
-    df.to_csv(output_csv, index=False)
     logger.info("Results generated at {}".format(output_csv))
 
 

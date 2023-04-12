@@ -1,0 +1,35 @@
+MODEL:
+  TYPE: mbanynet
+  NUM_CLASSES: 1000
+ANYNET:
+  STEM_TYPE: simple_stem_in
+  STEM_W: 32
+  STEM_K: 3
+  BLOCK_TYPE: res_bottleneck_block
+  STRIDES: [[2], [2], [2], [2]]
+  DEPTHS: [[2], [5], [14], [2]]
+  WIDTHS: [[80], [240], [560], [1360]]
+  BOT_MULS: [1, 1, 1, 1]
+  GROUP_WS: [[40], [40], [40], [40]]
+  DEVICES: ["dsp"]
+  HEAD_DEVICE: "dsp"
+  STEM_DEVICE: "dsp"
+  MERGE_DEVICE: "dsp"
+  ORIGINAL_WIDTHS: [80, 240, 560, 1360]
+OPTIM:
+  LR_POLICY: cos
+  BASE_LR: 0.8
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 5e-5
+  WARMUP_EPOCHS: 5
+TRAIN:
+  DATASET: imagenet-tar
+  IM_SIZE: 224
+  BATCH_SIZE: 1024
+TEST:
+  DATASET: imagenet-tar
+  IM_SIZE: 256
+  BATCH_SIZE: 800
+NUM_GPUS: 8
+OUT_DIR: .

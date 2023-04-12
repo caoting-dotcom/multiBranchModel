@@ -6,15 +6,15 @@ ANYNET:
   STEM_W: 64
   BLOCK_TYPE: res_bottleneck_block
   STRIDES: [[1, 1], [2, 2], [2, 2], [2, 2]]
-  DEPTHS: [[3, 2], [3, 3], [5, 5], [3, 2]]
-  WIDTHS: [[128, 224], [320, 256], [672, 544], [1216, 1152]]
+  DEPTHS: [[2, 3], [3, 4], [4, 6], [2, 2]]
+  WIDTHS: [[192, 192], [352, 288], [864, 480], [1696, 992]]
   BOT_MULS: [0.25, 0.25, 0.25, 0.25]
-  GROUP_WS: [[32, 56], [80, 64], [168, 136], [304, 288]]
-  DEVICES: ["cpu", "dsp"]
+  GROUP_WS: [[48, 48], [88, 72], [216, 120], [424, 248]]
+  DEVICES: ["cpu", "gpu"]
   HEAD_DEVICE: "cpu"
   STEM_DEVICE: "cpu"
   MERGE_DEVICE: "cpu"
-  ORIGINAL_WIDTHS: [352, 576, 1216, 2368]
+  ORIGINAL_WIDTHS: [384, 640, 1344, 2688]
 OPTIM:
   LR_POLICY: cos
   BASE_LR: 0.2
@@ -25,9 +25,6 @@ TRAIN:
   DATASET: imagenet
   IM_SIZE: 224
   BATCH_SIZE: 256
-  DISTILL: True
-  TEACHER: resnet
-  TEACHER_NAME: ResNet-50
 TEST:
   DATASET: imagenet
   IM_SIZE: 256
