@@ -73,6 +73,16 @@ Then in docker:
 python run_pipeline.py --configs /data --adb_host host.docker.internal
 ```
 
+## Trouble shooting
+
+### Could not create Hexagon delegate
+
+It means your android smartphone is not equipped with a Hexagon DSP or your Hexagon architecture is unsupported by tensorflow. Currently, tensorflow only support Hexagon of architecture 680/682/685/690.
+
+### Segmentation fault
+
+This error is most likely caused by no root access. Root is required for energy measurement. If you don't want to profile the energy, please pass `--no_root` to `run_pipeline.py`.
+
 ## Code structure
 
 - src/mbm-pycls: The model generation and training are based on [pycls](https://github.com/facebookresearch/pycls). It is included in this repo as a submodule. Our modifications involve commits from [fc4fc5](https://github.com/kaleid-liner/mbm-pycls/commit/fc4fc503e7d0f4f9fbf369b068d45af191d8c5e9), mainly including:
