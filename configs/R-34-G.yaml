@@ -1,5 +1,5 @@
 MODEL:
-  TYPE: anynet
+  TYPE: mbanynet
   NUM_CLASSES: 1000
 ANYNET:
   STEM_TYPE: res_stem_in

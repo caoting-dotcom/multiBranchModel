@@ -47,11 +47,12 @@ class MeasurementBasedLatencyPredictor:
             self.device = self.client.devices()[0]
         
         self.device_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model")
+        self.device_gpu_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model_only_gpu")
         for filename in glob.glob(os.path.join(runtime_path, "*")):
             device_path = os.path.join(self.device_tmp_dir, os.path.basename(filename))
             self.push(filename, device_path)
         
-        self.device.shell("chmod +x {}".format(self.device_bin_path))
+        self.device.shell("chmod +x {} && chmod +x {}".format(self.device_bin_path, self.device_gpu_bin_path))
 
     def gen_tflite_model(self, cfg_path, model_path):
         logger.info("Generating tflite model for {} at {}".format(cfg_path, model_path))
@@ -115,6 +116,11 @@ class MeasurementBasedLatencyPredictor:
         use_hexagon = "true" if "dsp" in cfg.ANYNET.DEVICES else "false"
         powersave_level = cfg.TEST.POWERSAVE_LEVEL
 
+        if len(cfg.ANYNET.DEVICES) == 1 and use_gpu == "true":
+            bin_path = self.device_gpu_bin_path
+        else:
+            bin_path = self.device_bin_path
+
         command = (
             "taskset f0 {} "
             "--graph={} "
@@ -128,10 +134,11 @@ class MeasurementBasedLatencyPredictor:
             "--min_secs=0 "
             "--warmup_runs=5 "
             "--num_runs=50 "
-            "--hexagon_powersave_level={}".format(self.device_bin_path, device_model_path, use_hexagon, use_gpu, powersave_level)
+            "--hexagon_powersave_level={}".format(bin_path, device_model_path, use_hexagon, use_gpu, powersave_level)
         )
         if self.as_root:
             command = "su -c " + "'" + command + "'"
+        logger.info("Running command {} on device".format(command))
         res = self.device.shell(command)
 
         return MeasurementBasedLatencyPredictor._parse(res)
@@ -179,8 +186,19 @@ def main():
 
     predictor = MeasurementBasedLatencyPredictor(runtime_path, args.device_tmp_dir, serial=serial, host=adb_host, as_root=as_root)
     
-    results = []
+    if os.path.exists(output_csv):
+        results = pd.read_csv(output_csv)
+    else:
+        results = pd.DataFrame({
+            "cfg": [],
+            "latency": [],
+            "energy": [],
+        })
     for cfg_path in configs:
+        if cfg_path in results["cfg"].values:
+            logger.info("Experiment {} already runned".format(cfg_path))
+            continue
+
         logger.info("Running experiment: {}".format(cfg_path))
         model_name = Path(cfg_path).stem
         model_basename = model_name + ".tflite"
@@ -193,14 +211,16 @@ def main():
         predictor.push(model_path, device_model_path)
 
         latency, energy = predictor.predict(device_model_path)
-        results.append({
+        results = results.append({
             "cfg": cfg_path,
             "latency": latency,
             "energy": energy,
-        })
-        df = pd.DataFrame.from_dict(results)
-        df.to_csv(output_csv, index=False)
+        }, ignore_index=True)
+        results.to_csv(output_csv, index=False)
         logger.info("Result appended to {}".format(output_csv))
+
+        # Reclaim memory
+        tf.keras.backend.clear_session()
         gc.collect()
 
     logger.info("Results generated at {}".format(output_csv))

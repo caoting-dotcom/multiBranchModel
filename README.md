@@ -73,6 +73,15 @@ Then in docker:
 python run_pipeline.py --configs /data --adb_host host.docker.internal
 ```
 
+### Evaluation output
+
+Check the [video](tutorial/end2end-pipeline.mp4) to see the expected stdout output. The final results will be generated at `/workspace/data/result.csv` of the container.
+
+The CSV table are consisted of three columns:
+- `cfg`: Path of the config file. E.g., a config named R-50-CD.yaml means the model are generated with two branches, one for CPU and one for DSP. A config named R-50-C.yaml means the model is a baseline model generated for CPU.
+- `latency`: Inference latency of the model.
+- `energy`: Inference energy of the model. It could be 0 if the device is not rooted or hardware counters are unavailable. It could be less than 0 if the device is connected to the device via USB. To profile the energy accurately, WiFi ADB is recommended.
+
 ## Trouble shooting
 
 ### Could not create Hexagon delegate

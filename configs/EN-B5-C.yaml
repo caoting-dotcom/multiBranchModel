@@ -1,7 +1,7 @@
 MODEL:
   TYPE: mbanynet
   NUM_CLASSES: 1000
-  ACTIVATION_FUN: relu
+  ACTIVATION_FUN: silu
 ANYNET:
   STEM_TYPE: simple_stem_in
   STEM_W: 48
