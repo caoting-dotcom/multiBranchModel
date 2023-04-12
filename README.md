@@ -27,7 +27,7 @@ docker build -t kalineid/nn_stretch .
 First, start the container with:
 
 ```
-docker run -it -v configs:/data --privileged -v /dev/bus/usb:/dev/bus/usb --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v $(pwd)/configs:/data --net host --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 You should enter the container after the above command. Type in docker:
@@ -65,7 +65,7 @@ adb -a -P 5037 nodaemon server
 And start the container with:
 
 ```
-docker run -it -v configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
+docker run -it -v absolute_path_to_configs:/data --name stretch-ae kalineid/nn_stretch /bin/bash
 ```
 
 Then in docker:
