@@ -1,3 +1,6 @@
+This repo includes the implementation for paper "NN-Stretch: Automatic Neural Network Branching for
+Parallel Inference on Heterogeneous Multi-Processors"
+
 ## Pull docker
 
 We provide a docker container for the artifact. It can be directly downloaded by:
@@ -8,8 +11,7 @@ docker image pull kalineid/nn_stretch
 
 ## Build Docker (optional)
 
-If you want to build the docker yourself, run the following command:
-
+If you want to build the docker yourself, run the following command. Or you can skip this step to the next step.
 ```
 git submodule update --init --recursive
 docker build -t kalineid/nn_stretch .
