@@ -92,6 +92,10 @@ It means your android smartphone is not equipped with a Hexagon DSP or your Hexa
 
 This error is most likely caused by no root access. Root is required for energy measurement. If you don't want to profile the energy, please pass `--no_root` to `run_pipeline.py`.
 
+### Incorrect energy result
+
+The energy result can be incorrect if your phone is connected via USB. Please use WiFi ADB if you want to profile the energy accurately.
+
 ## Code structure
 
 - src/mbm-pycls: The model generation and training are based on [pycls](https://github.com/facebookresearch/pycls). It is included in this repo as a submodule. Our modifications involve commits from [fc4fc5](https://github.com/kaleid-liner/mbm-pycls/commit/fc4fc503e7d0f4f9fbf369b068d45af191d8c5e9), mainly including:
