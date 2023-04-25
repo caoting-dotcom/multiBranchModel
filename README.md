@@ -98,11 +98,11 @@ The energy result can be incorrect if your phone is connected via USB. Please us
 
 ## Code structure
 
-- src/mbm-pycls: The model generation and training are based on [pycls](https://github.com/facebookresearch/pycls). It is included in this repo as a submodule. Our modifications involve commits from [fc4fc5](https://github.com/kaleid-liner/mbm-pycls/commit/fc4fc503e7d0f4f9fbf369b068d45af191d8c5e9), mainly including:
+- src/mbm-pycls: The model generation and training are based on [pycls](https://github.com/facebookresearch/pycls). It is included in this repo as a submodule. Our modifications involve commits from [fc4fc5](https://github.com/kaleid-liner/mbm-pycls/commit/fc4fc503e7d0f4f9fbf369b068d45af191d8c5e9) to latest, mainly including:
     - pycls/ir: build pytorch/tensorflow models from multi-branch configs.
     - pycls/models: define extra `nn.Module`s to build the models
 
-- src/tensorflow: Implement the inference for multi-branch models based on tflite. It is included in this repo as a submodule. Our modifications involve commits from [be3db60](https://github.com/kaleid-liner/tensorflow/commit/be3db600d6fb9fcc185c5537f3cbbef3d558a0d0), mainly including:
+- src/tensorflow: Implement the inference for multi-branch models based on tflite. It is included in this repo as a submodule. Our modifications involve commits from [be3db60](https://github.com/kaleid-liner/tensorflow/commit/be3db600d6fb9fcc185c5537f3cbbef3d558a0d0) to latest, mainly including:
     - tensorflow/lite/core/subgraph.cc: modify the inference procedure; partition the model into different devices using the name tags
     - tensorflow/lite/graph_info.cc: extra utils for model partition
     - tensorflow/lite/c/common.h: change the api of `TfLiteContext`
