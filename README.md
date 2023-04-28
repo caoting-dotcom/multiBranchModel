@@ -41,10 +41,10 @@ to check if your Android device is successfully connected to the container.
 Then, in docker:
 
 ```
-python run_pipeline.py --configs /data/pixel
+python run_pipeline.py --configs /data/pixel/ [--num_threads 2 --core_affinity c0]
 ```
 
-This script will automatically generate the model for the yaml configs in /data and profile the models on the Android device. The execution can consume over 30 mins.
+This script will automatically generate the model for the yaml configs in /data and profile the models on the Android device. The execution can consume over 30 mins. `--num_threads 2 --core_affinity c0` is needed for device similar with Pixel6 (with two big cores).
 
 If you see this on terminal:
 
