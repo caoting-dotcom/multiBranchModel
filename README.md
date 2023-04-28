@@ -41,7 +41,7 @@ to check if your Android device is successfully connected to the container.
 Then, in docker:
 
 ```
-python run_pipeline.py --configs /data
+python run_pipeline.py --configs /data/pixel
 ```
 
 This script will automatically generate the model for the yaml configs in /data and profile the models on the Android device. The execution can consume over 30 mins.
@@ -70,7 +70,7 @@ docker run -it -v absolute_path_to_configs:/data --name stretch-ae kalineid/nn_s
 
 Then in docker:
 ```
-python run_pipeline.py --configs /data --adb_host host.docker.internal
+python run_pipeline.py --configs /data/pixel --adb_host host.docker.internal
 ```
 
 ### Evaluation output
