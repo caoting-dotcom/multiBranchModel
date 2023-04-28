@@ -33,11 +33,13 @@ def get_representative_dataset(input_shape):
 
 
 class MeasurementBasedLatencyPredictor:
-    def __init__(self, runtime_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True):
+    def __init__(self, runtime_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True, num_threads=4, core_affinity="f0"):
         self.host = host
         self.serial = serial
         self.device_tmp_dir = device_tmp_dir
         self.as_root = as_root
+        self.num_threads = num_threads
+        self.core_affinity = core_affinity
 
         logger.info("Initializing the connection with android device...")
         self.client = AdbClient(self.host, port=5037)
@@ -56,6 +58,7 @@ class MeasurementBasedLatencyPredictor:
 
     def gen_tflite_model(self, cfg_path, model_path):
         logger.info("Generating tflite model for {} at {}".format(cfg_path, model_path))
+        config.reset_cfg()
         config.load_cfg(cfg_path)
         config.assert_cfg()
         cfg.freeze()
@@ -122,11 +125,11 @@ class MeasurementBasedLatencyPredictor:
             bin_path = self.device_bin_path
 
         command = (
-            "taskset f0 {} "
+            "taskset {} {} "
             "--graph={} "
             "--use_hexagon={} "
             "--use_gpu={} "
-            "--num_threads=4 "
+            "--num_threads={} "
             "--use_xnnpack=false "
             "--enable_op_profiling=true "
             "--max_delegated_partitions=100 "
@@ -134,7 +137,7 @@ class MeasurementBasedLatencyPredictor:
             "--min_secs=0 "
             "--warmup_runs=5 "
             "--num_runs=50 "
-            "--hexagon_powersave_level={}".format(bin_path, device_model_path, use_hexagon, use_gpu, powersave_level)
+            "--hexagon_powersave_level={}".format(self.core_affinity, bin_path, device_model_path, use_hexagon, use_gpu, self.num_threads, powersave_level)
         )
         if self.as_root:
             command = "su -c " + "'" + command + "'"
@@ -159,6 +162,8 @@ def parse_args():
     parser.add_argument("--configs", type=str, default="")
     parser.add_argument("--no_root", dest="as_root", action="store_false")
     parser.add_argument("--android_runtime", type=str, default="/android/runtime")
+    parser.add_argument("--num_threads", type=int, default=4, help="Set to 2 for Pixel6 (or any device with 2 big cores)")
+    parser.add_argument("--core_affinity", type=str, default="f0", help="Set to b0 for Pixel6 (or any device with 2 big cores)")
     parser.set_defaults(as_root=True)
     return parser.parse_args()
 
@@ -179,12 +184,22 @@ def main():
     serial = args.serial
     adb_host = args.adb_host
     as_root = args.as_root
+    num_threads = args.num_threads
+    core_affinity = args.core_affinity
     if os.path.isdir(configs_path):
         configs = glob.glob(os.path.join(configs_path, "*.yaml"))
     else:
         configs = [configs_path]
 
-    predictor = MeasurementBasedLatencyPredictor(runtime_path, args.device_tmp_dir, serial=serial, host=adb_host, as_root=as_root)
+    predictor = MeasurementBasedLatencyPredictor(
+        runtime_path,
+        args.device_tmp_dir, 
+        serial=serial,
+        host=adb_host,
+        as_root=as_root, 
+        num_threads=num_threads,
+        core_affinity=core_affinity
+    )
     
     if os.path.exists(output_csv):
         results = pd.read_csv(output_csv)

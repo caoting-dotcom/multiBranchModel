@@ -1,0 +1,26 @@
+MODEL:
+  TYPE: mbanynet
+  NUM_CLASSES: 1000
+  ACTIVATION_FUN: silu
+ANYNET:
+  STEM_TYPE: simple_stem_in
+  STEM_W: 48
+  STEM_K: 3
+  BLOCK_TYPE: mbconv
+  STRIDES: [[1], [2], [2], [2], [1], [2], [1]]
+  DEPTHS: [[3], [5], [5], [7], [7], [9], [3]]
+  WIDTHS: [[24], [40], [64], [128], [176], [304], [512]]
+  BOT_MULS: [1, 6, 6, 6, 6, 6, 6]
+  KERNELS: [3, 3, 5, 3, 5, 5, 3]
+  HEAD_W: 2048
+  DEVICES: ["gpu"]
+  HEAD_DEVICE: "gpu"
+  STEM_DEVICE: "gpu"
+  MERGE_DEVICE: "gpu"
+  ORIGINAL_WIDTHS: [24, 40, 64, 128, 172, 304, 512]
+  SE_ON: False
+  ACTIVATION_FUN: ["silu"]
+TRAIN:
+  DATASET: imagenet
+  IM_SIZE: 456
+  BATCH_SIZE: 64

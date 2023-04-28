@@ -96,6 +96,10 @@ This error is most likely caused by no root access. Root is required for energy 
 
 The energy result can be incorrect if your phone is connected via USB. Please use WiFi ADB if you want to profile the energy accurately.
 
+### Unstable results on Pixel6
+
+Pixel6 (or similar device) has two big cores and the results can be very unstable if using 2 big cores + 2 mid cores (varying from 20 ms to 100 ms). The unmodified TFLite2.9 has the same problem. Please specify "--num_theads=2 --core_affinity=c0" on such device.
+
 ## Code structure
 
 - src/mbm-pycls: The model generation and training are based on [pycls](https://github.com/facebookresearch/pycls). It is included in this repo as a submodule. Our modifications involve commits from [fc4fc5](https://github.com/kaleid-liner/mbm-pycls/commit/fc4fc503e7d0f4f9fbf369b068d45af191d8c5e9) to latest, mainly including:
