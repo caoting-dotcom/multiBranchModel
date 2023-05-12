@@ -6,16 +6,16 @@ ANYNET:
   STEM_W: 32
   STEM_K: 3
   BLOCK_TYPE: res_bottleneck_block
-  STRIDES: [[2], [2], [2], [2]]
-  DEPTHS: [[2], [5], [14], [2]]
-  WIDTHS: [[80], [240], [560], [1360]]
+  STRIDES: [[2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2]]
+  DEPTHS: [[2, 2, 2], [3, 5, 2], [8, 13, 5], [2, 2, 1]]
+  WIDTHS: [[40, 40, 40], [160, 120, 80], [400, 240, 240], [960, 720, 640]]
   BOT_MULS: [1, 1, 1, 1]
-  GROUP_WS: [[40], [40], [40], [40]]
-  DEVICES: ["dsp"]
-  HEAD_DEVICE: "dsp"
-  STEM_DEVICE: "dsp"
-  MERGE_DEVICE: "dsp"
-  ORIGINAL_WIDTHS: [80, 240, 560, 1360]
+  GROUP_WS: [[40, 40, 40], [40, 40, 40], [40, 40, 40], [40, 40, 40]]
+  DEVICES: ["cpu", "dsp", "gpu"]
+  HEAD_DEVICE: "cpu"
+  STEM_DEVICE: "cpu"
+  MERGE_DEVICE: "cpu"
+  ORIGINAL_WIDTHS: [120, 360, 880, 2360]
 OPTIM:
   LR_POLICY: cos
   BASE_LR: 0.8

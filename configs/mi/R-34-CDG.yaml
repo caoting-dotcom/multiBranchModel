@@ -6,16 +6,16 @@ ANYNET:
   STEM_W: 64
   STEM_K: 7
   BLOCK_TYPE: res_basic_block
-  STRIDES: [[1, 1], [2, 2], [2, 2], [2, 2]]
-  DEPTHS: [[3, 2], [3, 3], [6, 5], [3, 2]]
-  WIDTHS: [[32, 64], [80, 64], [144, 160], [256, 320]]
+  STRIDES: [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2]]
+  DEPTHS: [[2, 2, 2], [2, 3, 3], [6, 5, 3], [3, 2, 2]]
+  WIDTHS: [[32, 32, 32], [80, 64, 48], [136, 128, 88], [240, 224, 120]]
   BOT_MULS: [1, 1, 1, 1]
-  GROUP_WS: [[32, 64], [80, 64], [144, 160], [256, 320]]
-  DEVICES: ["cpu", "dsp"]
+  GROUP_WS: [[32, 32, 32], [80, 64, 48], [136, 128, 88], [240, 224, 120]]
+  DEVICES: ["cpu", "dsp", "gpu"]
   HEAD_DEVICE: "cpu"
   STEM_DEVICE: "cpu"
   MERGE_DEVICE: "cpu"
-  ORIGINAL_WIDTHS: [96, 144, 304, 576]
+  ORIGINAL_WIDTHS: [96, 192, 352, 584]
 OPTIM:
   LR_POLICY: cos
   BASE_LR: 0.2
@@ -30,5 +30,6 @@ TEST:
   DATASET: imagenet
   IM_SIZE: 256
   BATCH_SIZE: 200
+  POWERSAVE_LEVEL: 255
 NUM_GPUS: 8
 OUT_DIR: .

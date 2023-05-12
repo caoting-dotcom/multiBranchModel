@@ -18,7 +18,7 @@ ANYNET:
   STEM_DEVICE: "cpu"
   MERGE_DEVICE: "cpu"
   ORIGINAL_WIDTHS: [24, 40, 64, 128, 176, 304, 512]
-  SE_ON: False
+  SE_ON: True
   MB_VER: 1
   ACTIVATION_FUN: ["relu", "silu"]
 OPTIM:
@@ -28,11 +28,11 @@ OPTIM:
   MOMENTUM: 0.9
   WEIGHT_DECAY: 1e-5
 TRAIN:
-  DATASET: imagenet-tar
+  DATASET: imagenet
   IM_SIZE: 456
   BATCH_SIZE: 64
 TEST:
-  DATASET: imagenet-tar
+  DATASET: imagenet
   IM_SIZE: 522
   BATCH_SIZE: 48
   POWERSAVE_LEVEL: 128

@@ -22,7 +22,7 @@ If you want to build the docker yourself, run the following command. Or you can 
 docker build -t kalineid/nn_stretch .
 ```
 
-## Evaluation
+## Latency Evaluation
 
 First, start the container with:
 
@@ -81,6 +81,111 @@ The CSV table are consisted of three columns:
 - `cfg`: Path of the config file. E.g., a config named R-50-CD.yaml means the model are generated with two branches, one for CPU and one for DSP. A config named R-50-C.yaml means the model is a baseline model generated for CPU.
 - `latency`: Inference latency of the model.
 - `energy`: Inference energy of the model. It could be 0 if the device is not rooted or hardware counters are unavailable. It could be less than 0 if the device is connected to the device via USB. To profile the energy accurately, WiFi ADB is recommended.
+
+## Accuracy Evluation
+
+ImageNet is a very large dataset. If you haven't used ImageNet before, you need to first prepare the dataset. If you already have ImageNet on your host computer, you can skip Step 1.
+
+### Step 1: Prepare Data
+
+Download ImageNet from [kaggle](https://www.kaggle.com/competitions/imagenet-object-localization-challenge/data):
+```
+kaggle competitions download -c imagenet-object-localization-challenge
+```
+
+or image-net with:
+```
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar --no-check-certificate
+wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar --no-check-certificate
+```
+
+Then using [this script](tools/extract_ILSVRC.sh) to process the data.
+
+After the above commands, the expected structure of `${path_to_imagenet}` should be:
+```
+ train/
+ ├── n01440764
+ │   ├── n01440764_10026.JPEG
+ │   ├── n01440764_10027.JPEG
+ │   ├── ......
+ ├── ......
+ val/
+ ├── n01440764
+ │   ├── ILSVRC2012_val_00000293.JPEG
+ │   ├── ILSVRC2012_val_00002138.JPEG
+ │   ├── ......
+ ├── ......
+```
+
+Mount the folder while starting the container with:
+```
+docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet --net host --name stretch-ae kalineid/nn_stretch /bin/bash
+```
+
+In the container, create a symlink to path of the imagenet (follow [this doc](https://github.com/kaleid-liner/mbm-pycls/blob/main/docs/DATA.md) for more details):
+```
+mkdir -p /app/mbm-pycls/pycls/datasets/data
+ln -sv /imagenet /app/mbm-pycls/pycls/datasets/data/imagenet
+```
+
+### Step 2: Preprocess for FFCV
+
+Most of our models are trained using [ffcv](https://github.com/libffcv/ffcv) dataloader for faster training. This needs extra steps to preprocess the dataset. Follow [the instructions](https://github.com/libffcv/ffcv-imagenet/blob/main/README.md) at [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) to get `train.ffcv` and `val.ffcv`. You will need to execute the following commands:
+```
+# Required environmental variables for the script:
+export IMAGENET_DIR=/path/to/pytorch/format/imagenet/directory/
+export WRITE_DIR=/your/path/here/
+
+# Starting in the root of the Git repo:
+cd examples;
+
+# Serialize images with:
+# - 500px side length maximum
+# - 50% JPEG encoded
+# - quality=90 JPEGs
+./write_imagenet.sh 500 0.50 90
+```
+
+After that, rename the files and create a symlink to `${WRITE_DIR}`:
+```
+mv ${WRITE_DIR}/train_500_0.50_90.ffcv ${WRITE_DIR}/train.ffcv
+mv ${WRITE_DIR}/val_500_0.50_90.ffcv ${WRITE_DIR}/val.ffcv
+mkdir -p /app/mbm-pycls/pycls/datasets/ffcv
+ln -sv ${WRITE_DIR} /app/mbm-pycls/pycls/datasets/ffcv/imagenet
+```
+
+### Step 3: Training and Evaluation
+
+We provide trained model weights at [zenodo](). After downloading, extract the models and mount it to docker container with:
+```
+docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet -v ${path_to_models}:/models --net host --name stretch-ae --shm-size=32g kalineid/nn_stretch /bin/bash
+```
+
+Note that `--shm-size=xxx` is needed. The default 64M shared memory is not enough for the pytorch dataloader.
+
+To evaluate the accuracy using trained models:
+```
+python tools/eval_acc.py --cfg /data/mi/EN-B5-CD.yaml
+```
+
+An example output for EN-B5-CD is provided [here](sample_output/EN-B5-CD-ACC.log). Check the last line for accuracy:
+```
+[meters.py: 260]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "mem": 1138, "min_top1_err": 21.2500, "min_top5_err": 5.7680, "time_avg": 0.0395, "time_epoch": 41.1608, "top1_err": 21.2500, "top5_err": 5.7680}
+```
+
+You can also train and evaluate a model yourself through the following command:
+```
+python /app/mbm-pycls/tools/run_net.py --cfg /data/mi/EN-B5-CD.yaml --mode train|test OUT_DIR ${out_dir} NUM_GPUS ${num_gpus} DATA_LOADER.MODE ffcv
+```
+
+## Compilation of `benchmark_model`
+
+The `benchmark_model` used for profiling is compiled in the [Dockerfile](Dockerfile). In the case you want to modify the `benchmark_model`, we provide a seperate docker. It can be built with `docker build -f Dockerfile.tf .`.
+
+In the container, you can trigger the compilation with:
+```
+bazel build -c opt --config=android_arm64 //tensorflow/lite/tools/benchmark:benchmark_model
+```
 
 ## Trouble shooting
 

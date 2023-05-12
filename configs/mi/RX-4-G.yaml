@@ -24,11 +24,11 @@ OPTIM:
   WEIGHT_DECAY: 5e-5
   WARMUP_EPOCHS: 5
 TRAIN:
-  DATASET: imagenet-tar
+  DATASET: imagenet
   IM_SIZE: 224
   BATCH_SIZE: 1024
 TEST:
-  DATASET: imagenet-tar
+  DATASET: imagenet
   IM_SIZE: 256
   BATCH_SIZE: 800
 NUM_GPUS: 8
