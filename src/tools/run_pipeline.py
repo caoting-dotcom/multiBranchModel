@@ -20,20 +20,54 @@ from pycls.core.config import cfg
 from pycls.ir.constructor.tensorflow.anynet import anynet
 import pycls.core.builders as builders
 
+import sys
+
+from absl import app
+from absl import flags
+
+from tensorflow.python.client import session
+from tensorflow.python.framework import ops
+from tensorflow.python.framework.errors_impl import NotFoundError
+from tensorflow.python.ops import image_ops
+from tensorflow.python.ops import io_ops
+
 
 logger = logging.getLogger("NN-Stretch")
 
 
-def get_representative_dataset(input_shape):
+def get_representative_dataset(input_shape, input_image=None):
     def representative_dataset():
         for _ in range(100):
-            data = np.random.rand(1, *input_shape)
+            data = input_image or np.random.rand(1, *input_shape)
             yield [data.astype(np.float32)]
     return representative_dataset
 
 
+def get_image(width, height, want_grayscale, filepath):
+  """Returns an image loaded into an np.ndarray with dims [height, width, (3 or 1)].
+
+  Args:
+    width: Width to rescale the image to.
+    height: Height to rescale the image to.
+    want_grayscale: Whether the result should be converted to grayscale.
+    filepath: Path of the image file..
+
+  Returns:
+    np.ndarray of shape (height, width, channels) where channels is 1 if
+      want_grayscale is true, otherwise 3.
+  """
+  with ops.Graph().as_default():
+    with session.Session():
+      file_data = io_ops.read_file(filepath)
+      channels = 1 if want_grayscale else 3
+      image_tensor = image_ops.decode_image(file_data, channels=channels).eval()
+      resized_tensor = image_ops.resize_images_v2(image_tensor,
+                                                  (height, width)).eval()
+  return resized_tensor
+
+
 class MeasurementBasedLatencyPredictor:
-    def __init__(self, runtime_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True, num_threads=4, core_affinity="f0"):
+    def __init__(self, runtime_path, device_tmp_dir, host="127.0.0.1", serial="", as_root=True, num_threads=4, core_affinity="f0", input_image=""):
         self.host = host
         self.serial = serial
         self.device_tmp_dir = device_tmp_dir
@@ -48,13 +82,21 @@ class MeasurementBasedLatencyPredictor:
         else:
             self.device = self.client.devices()[0]
         
+        if input_image:
+            filename = os.path.join(runtime_path, "input.bin")
+            self.input_image = get_image(224, 224, False, input_image)
+            self.input_image.astype(np.uint8).tofile(filename)
+        else:
+            self.input_image = None
+
         self.device_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model")
         self.device_gpu_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model_only_gpu")
+        self.device_dg_bin_path = os.path.join(self.device_tmp_dir, "benchmark_model_dg")
         for filename in glob.glob(os.path.join(runtime_path, "*")):
             device_path = os.path.join(self.device_tmp_dir, os.path.basename(filename))
             self.push(filename, device_path)
         
-        self.device.shell("chmod +x {} && chmod +x {}".format(self.device_bin_path, self.device_gpu_bin_path))
+        self.device.shell("chmod +x {} && chmod +x {} && chmod +x {}".format(self.device_bin_path, self.device_gpu_bin_path, self.device_dg_bin_path))
 
     def gen_tflite_model(self, cfg_path, model_path):
         logger.info("Generating tflite model for {} at {}".format(cfg_path, model_path))
@@ -73,7 +115,7 @@ class MeasurementBasedLatencyPredictor:
 
             converter = tf.lite.TFLiteConverter.from_keras_model(net)
             converter.optimizations = [tf.lite.Optimize.DEFAULT]
-            converter.representative_dataset = get_representative_dataset(input_shape)
+            converter.representative_dataset = get_representative_dataset(input_shape, self.input_image)
             converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
             converter.inference_input_type = tf.uint8
             converter.inference_output_type = tf.uint8
@@ -121,6 +163,8 @@ class MeasurementBasedLatencyPredictor:
 
         if len(cfg.ANYNET.DEVICES) == 1 and use_gpu == "true":
             bin_path = self.device_gpu_bin_path
+        elif len(cfg.ANYNET.DEVICES) == 2 and use_gpu == "true" and use_hexagon == "true":
+            bin_path = self.device_dg_bin_path
         else:
             bin_path = self.device_bin_path
 
@@ -139,6 +183,14 @@ class MeasurementBasedLatencyPredictor:
             "--num_runs=50 "
             "--hexagon_powersave_level={}".format(self.core_affinity, bin_path, device_model_path, use_hexagon, use_gpu, self.num_threads, powersave_level)
         )
+        if self.input_image:
+            command = (
+                "{} "
+                "--input_layer='input1' "
+                "--input_layer_shape='1,224,224,3' "
+                "--input_layer_value_files='input1:{}' ".format(command, os.path.join(self.device_tmp_dir, "input.bin"))
+            )
+
         if self.as_root:
             command = "su -c " + "'" + command + "'"
         logger.info("Running command {} on device".format(command))
@@ -164,7 +216,13 @@ def parse_args():
     parser.add_argument("--android_runtime", type=str, default="/android/runtime")
     parser.add_argument("--num_threads", type=int, default=4, help="Set to 2 for Pixel6 (or any device with 2 big cores)")
     parser.add_argument("--core_affinity", type=str, default="f0", help="Set to b0 for Pixel6 (or any device with 2 big cores)")
-    parser.set_defaults(as_root=True)
+    parser.add_argument(
+        "--use_real_weights",
+        dest="use_real_weights",
+        action="store_true", 
+        help="To find the real weight for a config, you need to add \n```\nTEST:\n  WEIGHTS: path_to_checkpoint\n```\nto the yaml file")
+    parser.add_argument("--input_image", type=str, default="", help="Specify this argument to use a real image for latency measurement.")
+    parser.set_defaults(as_root=True, use_real_weights=False)
     return parser.parse_args()
 
 
@@ -198,7 +256,8 @@ def main():
         host=adb_host,
         as_root=as_root, 
         num_threads=num_threads,
-        core_affinity=core_affinity
+        core_affinity=core_affinity,
+        input_image=args.input_image
     )
     
     if os.path.exists(output_csv):
