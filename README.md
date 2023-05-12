@@ -119,7 +119,7 @@ After the above commands, the expected structure of `${path_to_imagenet}` should
 
 ### Step 2: Preprocess for FFCV
 
-Most of our models are trained using [ffcv](https://github.com/libffcv/ffcv) dataloader for faster training. This needs extra steps to preprocess the dataset. Follow [the instructions](https://github.com/libffcv/ffcv-imagenet/blob/main/README.md) at [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) to get `train.ffcv` and `val.ffcv`. You will need to execute the following commands:
+Our models are trained using [ffcv](https://github.com/libffcv/ffcv) dataloader. This needs extra steps to preprocess the dataset. Follow [the instructions](https://github.com/libffcv/ffcv-imagenet/blob/main/README.md) at [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) to get `train.ffcv` and `val.ffcv`. You will need to execute the following commands:
 ```
 # Required environmental variables for the script:
 export IMAGENET_DIR=/path/to/pytorch/format/imagenet/directory/
