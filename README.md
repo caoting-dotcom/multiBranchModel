@@ -99,7 +99,7 @@ wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_train.tar --no-check-
 wget https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_val.tar --no-check-certificate
 ```
 
-Then using [this script](tools/extract_ILSVRC.sh) to process the data.
+Then using [this script](src/tools/extract_ILSVRC.sh) to process the data.
 
 After the above commands, the expected structure of `${path_to_imagenet}` should be:
 ```

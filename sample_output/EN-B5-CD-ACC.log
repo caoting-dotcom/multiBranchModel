@@ -1,0 +1,1611 @@
+INFO:NN-Stretch:Starting evaluation...
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+/usr/lib/python3/dist-packages/requests/__init__.py:89: RequestsDependencyWarning: urllib3 (1.26.14) or chardet (3.0.4) doesn't match a supported version!
+  warnings.warn("urllib3 ({}) or chardet ({}) doesn't match a supported "
+[trainer.py: 108]: PyTorch Version: torch=1.13.1+cu117, cuda=11.7, cudnn=8500
+[trainer.py: 110]: os.environ:
+BASH_ENV: /etc/profile
+BROWSER: /root/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/bin/helpers/browser.sh
+COLORTERM: truecolor
+CUDA_MODULE_LOADING: LAZY
+CUDA_VERSION: 11.7.1
+DEB_PYTHON_INSTALL_LAYOUT: deb
+DISPLAY: :0
+GIT_ASKPASS: /root/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/extensions/git/dist/askpass.sh
+HOME: /root
+HOSTNAME: costsim-dev-00000B
+LANG: en_US.UTF-8
+LC_CTYPE: C.UTF-8
+LD_LIBRARY_PATH: /usr/local/lib/python3.10/dist-packages/cv2/../../lib64:/usr/local/lib/python3.10/dist-packages/cv2/../../lib64:/usr/local/cuda/extras/CUPTI/lib64:/opt/amazon/openmpi/lib:/opt/amazon/efa/lib:/opt/aws-ofi-nccl/install/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+LESSCLOSE: /usr/bin/lesspipe %s %s
+LESSOPEN: | /usr/bin/lesspipe %s
+LIBRARY_PATH: /usr/local/cuda/lib64/stubs
+LOCAL_RANK: 0
+LS_COLORS: rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+MASTER_ADDR: localhost
+MASTER_PORT: 46140
+MKL_THREADING_LAYER: GNU
+NCCL_VERSION: 2.13.4-1
+NVARCH: x86_64
+NVIDIA_DRIVER_CAPABILITIES: compute,utility
+NVIDIA_PRODUCT_NAME: CUDA
+NVIDIA_REQUIRE_CUDA: cuda>=11.7 brand=tesla,driver>=450,driver<451 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471 brand=tesla,driver>=510,driver<511 brand=unknown,driver>=510,driver<511 brand=nvidia,driver>=510,driver<511 brand=nvidiartx,driver>=510,driver<511 brand=geforce,driver>=510,driver<511 brand=geforcertx,driver>=510,driver<511 brand=quadro,driver>=510,driver<511 brand=quadrortx,driver>=510,driver<511 brand=titan,driver>=510,driver<511 brand=titanrtx,driver>=510,driver<511
+NVIDIA_VISIBLE_DEVICES: all
+NV_CUDA_COMPAT_PACKAGE: cuda-compat-11-7
+NV_CUDA_CUDART_DEV_VERSION: 11.7.99-1
+NV_CUDA_CUDART_VERSION: 11.7.99-1
+NV_CUDA_LIB_VERSION: 11.7.1-1
+NV_CUDNN_PACKAGE: libcudnn8=8.5.0.96-1+cuda11.7
+NV_CUDNN_PACKAGE_DEV: libcudnn8-dev=8.5.0.96-1+cuda11.7
+NV_CUDNN_PACKAGE_NAME: libcudnn8
+NV_CUDNN_VERSION: 8.5.0.96
+NV_LIBCUBLAS_DEV_PACKAGE: libcublas-dev-11-7=11.10.3.66-1
+NV_LIBCUBLAS_DEV_PACKAGE_NAME: libcublas-dev-11-7
+NV_LIBCUBLAS_DEV_VERSION: 11.10.3.66-1
+NV_LIBCUBLAS_PACKAGE: libcublas-11-7=11.10.3.66-1
+NV_LIBCUBLAS_PACKAGE_NAME: libcublas-11-7
+NV_LIBCUBLAS_VERSION: 11.10.3.66-1
+NV_LIBCUSPARSE_DEV_VERSION: 11.7.4.91-1
+NV_LIBCUSPARSE_VERSION: 11.7.4.91-1
+NV_LIBNCCL_DEV_PACKAGE: libnccl-dev=2.13.4-1+cuda11.7
+NV_LIBNCCL_DEV_PACKAGE_NAME: libnccl-dev
+NV_LIBNCCL_DEV_PACKAGE_VERSION: 2.13.4-1
+NV_LIBNCCL_PACKAGE: libnccl2=2.13.4-1+cuda11.7
+NV_LIBNCCL_PACKAGE_NAME: libnccl2
+NV_LIBNCCL_PACKAGE_VERSION: 2.13.4-1
+NV_LIBNPP_DEV_PACKAGE: libnpp-dev-11-7=11.7.4.75-1
+NV_LIBNPP_DEV_VERSION: 11.7.4.75-1
+NV_LIBNPP_PACKAGE: libnpp-11-7=11.7.4.75-1
+NV_LIBNPP_VERSION: 11.7.4.75-1
+NV_NVML_DEV_VERSION: 11.7.91-1
+NV_NVPROF_DEV_PACKAGE: cuda-nvprof-11-7=11.7.101-1
+NV_NVPROF_VERSION: 11.7.101-1
+NV_NVTX_VERSION: 11.7.91-1
+PATH: /android/sdk/platform-tools:/android/sdk/cmdline-tools/latest/bin:/root/.local/bin:/composer-python:/opt/amazon/openmpi/bin/:/opt/amazon/efa/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+PWD: /workspace
+PYTORCH_VERSION: 1.13.1
+QT_QPA_FONTDIR: /usr/local/lib/python3.10/dist-packages/cv2/qt/fonts
+QT_QPA_PLATFORM_PLUGIN_PATH: /usr/local/lib/python3.10/dist-packages/cv2/qt/plugins
+RANK: 0
+REMOTE_CONTAINERS: true
+REMOTE_CONTAINERS_DISPLAY_SOCK: /tmp/.X11-unix/X0
+REMOTE_CONTAINERS_IPC: /tmp/vscode-remote-containers-ipc-d24ee37f-db21-45c3-9f60-960e29199899.sock
+REMOTE_CONTAINERS_SOCKETS: ["/tmp/vscode-ssh-auth-d24ee37f-db21-45c3-9f60-960e29199899.sock","/tmp/.X11-unix/X0","/root/.gnupg/S.gpg-agent"]
+SHELL: /bin/bash
+SHLVL: 2
+SSH_AUTH_SOCK: /tmp/vscode-ssh-auth-d24ee37f-db21-45c3-9f60-960e29199899.sock
+TERM: xterm-256color
+TERM_PROGRAM: vscode
+TERM_PROGRAM_VERSION: 1.76.2
+VSCODE_GIT_ASKPASS_EXTRA_ARGS: 
+VSCODE_GIT_ASKPASS_MAIN: /root/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_NODE: /root/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/node
+VSCODE_GIT_IPC_HANDLE: /tmp/vscode-git-aeb96c756f.sock
+VSCODE_IPC_HOOK_CLI: /tmp/vscode-ipc-ffb50944-24c3-492b-9d5e-2751b2c1615d.sock
+WORLD_SIZE: 8
+_: /composer-python/python
+
+[trainer.py: 112]: Config:
+ANYNET:
+  ACTIVATION_FUN: ['relu', 'silu']
+  BLOCK_TYPE: mbconv
+  BOT_MULS: [1, [6, 6], [6, 6], [6, 6], [6, 6], [6, 6], [6, 6]]
+  DEPTHS: [[3, 2], [4, 3], [3, 3], [6, 5], [4, 5], [7, 6], [3, 2]]
+  DEVICES: ['cpu', 'dsp']
+  GROUP_WS: []
+  HEAD_DEVICE: cpu
+  HEAD_W: 2048
+  KERNELS: [3, 3, 5, 3, 5, 5, 3]
+  MB_DOWNSAMPLE: True
+  MB_VER: 1
+  MERGE_DEVICE: cpu
+  ORIGINAL_WIDTHS: [24, 40, 64, 128, 176, 304, 512]
+  SE_ON: True
+  SE_R: 0.25
+  STEM_DEVICE: cpu
+  STEM_K: 3
+  STEM_TYPE: simple_stem_in
+  STEM_W: 48
+  STRIDES: [[1, 1], [2, 2], [2, 2], [2, 2], [1, 1], [2, 2], [1, 1]]
+  WIDTHS: [[24, 24], [32, 32], [56, 48], [112, 96], [160, 136], [272, 232], [448, 384]]
+BN:
+  CUSTOM_WEIGHT_DECAY: 0.0
+  EPS: 1e-05
+  MOM: 0.1
+  NUM_SAMPLES_PRECISE: 8192
+  USE_CUSTOM_WEIGHT_DECAY: False
+  USE_PRECISE_STATS: True
+  ZERO_INIT_FINAL_GAMMA: False
+CFG_DEST: config.yaml
+CUDNN:
+  BENCHMARK: True
+DATA_LOADER:
+  MODE: ffcv
+  NUM_WORKERS: 8
+  PIN_MEMORY: True
+DATA_PATH: 
+DESC: 
+DIST_BACKEND: nccl
+DOWNLOAD_CACHE: /tmp/pycls-download-cache
+EN:
+  DC_RATIO: 0.0
+  DEPTHS: []
+  DROPOUT_RATIO: 0.0
+  EXP_RATIOS: []
+  HEAD_W: 1280
+  KERNELS: []
+  SE_R: 0.25
+  STEM_W: 32
+  STRIDES: []
+  WIDTHS: []
+FSDP:
+  ENABLED: False
+  LAYER_NORM_FP32: True
+  RESHARD_AFTER_FW: True
+HOST: localhost
+LAUNCH:
+  COMMENT: 
+  CPUS_PER_GPU: 10
+  EMAIL: 
+  GPU_TYPE: volta
+  MAX_RETRY: 3
+  MEM_PER_GPU: 60
+  MODE: local
+  NAME: pycls_job
+  PARTITION: devlab
+  TIME_LIMIT: 4200
+LN:
+  CUSTOM_WEIGHT_DECAY: 0.0
+  EPS: 1e-05
+  USE_CUSTOM_WEIGHT_DECAY: False
+LOG_DEST: stdout
+LOG_PERIOD: 10
+MAX_GPUS_PER_NODE: 8
+MODEL:
+  ACTIVATION_FUN: silu
+  ACTIVATION_INPLACE: True
+  DEPTH: 0
+  LOSS_FUN: cross_entropy
+  NUM_CLASSES: 1000
+  SCALING_FACTOR: 1.0
+  SCALING_TYPE: 
+  TYPE: mbanynet
+NUM_GPUS: 8
+OPTIM:
+  BASE_LR: 0.1
+  BETA1: 0.9
+  BETA2: 0.999
+  BIAS_CUSTOM_WEIGHT_DECAY: 0.0
+  BIAS_USE_CUSTOM_WEIGHT_DECAY: False
+  DAMPENING: 0.0
+  EMA_ALPHA: 1e-05
+  EMA_UPDATE_PERIOD: 32
+  LR_MULT: 0.1
+  LR_POLICY: cos
+  MAX_EPOCH: 100
+  MIN_LR: 0.0
+  MOMENTUM: 0.9
+  MTA: False
+  NESTEROV: True
+  OPTIMIZER: sgd
+  STEPS: []
+  WARMUP_EPOCHS: 0
+  WARMUP_FACTOR: 0.1
+  WEIGHT_DECAY: 1e-05
+OUT_DIR: /models/EN-B5-CD
+PORT_RANGE: [10000, 65000]
+PREC_TIME:
+  NUM_ITER: 30
+  WARMUP_ITER: 3
+REGNET:
+  BLOCK_TYPE: res_bottleneck_block
+  BOT_MUL: 1.0
+  DEPTH: 10
+  GROUP_W: 16
+  HEAD_W: 0
+  SE_ON: False
+  SE_R: 0.25
+  STEM_TYPE: simple_stem_in
+  STEM_W: 32
+  STRIDE: 2
+  W0: 32
+  WA: 5.0
+  WM: 2.5
+RESNET:
+  NUM_GROUPS: 1
+  STRIDE_1X1: True
+  TRANS_FUN: basic_transform
+  WIDTH_PER_GROUP: 64
+RNG_SEED: 1
+TEST:
+  BATCH_SIZE: 48
+  DATASET: imagenet
+  IM_SIZE: 522
+  POWERSAVE_LEVEL: 128
+  SPLIT: val
+  WEIGHTS: /models/EN-B5-CD/model.pyth
+TRAIN:
+  AUGMENT: 
+  AUTO_RESUME: True
+  BATCH_SIZE: 64
+  CUTMIX_ALPHA: 0.0
+  DATASET: imagenet
+  DISTILL: False
+  IM_SIZE: 456
+  LABEL_SMOOTHING: 0.0
+  MIXED_PRECISION: False
+  MIXUP_ALPHA: 0.0
+  PCA_STD: 0.1
+  SPLIT: train
+  TEACHER: 
+  TEACHER_NAME: 
+  WEIGHTS: 
+VERBOSE: True
+VIT:
+  CLASSIFIER_TYPE: token
+  C_STEM_DIMS: []
+  C_STEM_KERNELS: []
+  C_STEM_STRIDES: []
+  HIDDEN_DIM: 768
+  MLP_DIM: 3072
+  NUM_HEADS: 12
+  NUM_LAYERS: 12
+  PATCH_SIZE: 16
+  STEM_TYPE: patchify
+[trainer.py: 113]: json_stats: {"ANYNET": {"ACTIVATION_FUN": ["relu", "silu"], "BLOCK_TYPE": "mbconv", "BOT_MULS": [1, [6, 6], [6, 6], [6, 6], [6, 6], [6, 6], [6, 6]], "DEPTHS": [[3, 2], [4, 3], [3, 3], [6, 5], [4, 5], [7, 6], [3, 2]], "DEVICES": ["cpu", "dsp"], "GROUP_WS": [], "HEAD_DEVICE": "cpu", "HEAD_W": 2048, "KERNELS": [3, 3, 5, 3, 5, 5, 3], "MB_DOWNSAMPLE": true, "MB_VER": 1, "MERGE_DEVICE": "cpu", "ORIGINAL_WIDTHS": [24, 40, 64, 128, 176, 304, 512], "SE_ON": true, "SE_R": 0.25, "STEM_DEVICE": "cpu", "STEM_K": 3, "STEM_TYPE": "simple_stem_in", "STEM_W": 48, "STRIDES": [[1, 1], [2, 2], [2, 2], [2, 2], [1, 1], [2, 2], [1, 1]], "WIDTHS": [[24, 24], [32, 32], [56, 48], [112, 96], [160, 136], [272, 232], [448, 384]]}, "BN": {"CUSTOM_WEIGHT_DECAY": 0.0, "EPS": 1e-05, "MOM": 0.1, "NUM_SAMPLES_PRECISE": 8192, "USE_CUSTOM_WEIGHT_DECAY": false, "USE_PRECISE_STATS": true, "ZERO_INIT_FINAL_GAMMA": false}, "CFG_DEST": "config.yaml", "CUDNN": {"BENCHMARK": true}, "DATA_LOADER": {"MODE": "ffcv", "NUM_WORKERS": 8, "PIN_MEMORY": true}, "DATA_PATH": "", "DESC": "", "DIST_BACKEND": "nccl", "DOWNLOAD_CACHE": "/tmp/pycls-download-cache", "EN": {"DC_RATIO": 0.0, "DEPTHS": [], "DROPOUT_RATIO": 0.0, "EXP_RATIOS": [], "HEAD_W": 1280, "KERNELS": [], "SE_R": 0.25, "STEM_W": 32, "STRIDES": [], "WIDTHS": []}, "FSDP": {"ENABLED": false, "LAYER_NORM_FP32": true, "RESHARD_AFTER_FW": true}, "HOST": "localhost", "LAUNCH": {"COMMENT": "", "CPUS_PER_GPU": 10, "EMAIL": "", "GPU_TYPE": "volta", "MAX_RETRY": 3, "MEM_PER_GPU": 60, "MODE": "local", "NAME": "pycls_job", "PARTITION": "devlab", "TIME_LIMIT": 4200}, "LN": {"CUSTOM_WEIGHT_DECAY": 0.0, "EPS": 1e-05, "USE_CUSTOM_WEIGHT_DECAY": false}, "LOG_DEST": "stdout", "LOG_PERIOD": 10, "MAX_GPUS_PER_NODE": 8, "MODEL": {"ACTIVATION_FUN": "silu", "ACTIVATION_INPLACE": true, "DEPTH": 0, "LOSS_FUN": "cross_entropy", "NUM_CLASSES": 1000, "SCALING_FACTOR": 1.0, "SCALING_TYPE": "", "TYPE": "mbanynet"}, "NUM_GPUS": 8, "OPTIM": {"BASE_LR": 0.1, "BETA1": 0.9, "BETA2": 0.999, "BIAS_CUSTOM_WEIGHT_DECAY": 0.0, "BIAS_USE_CUSTOM_WEIGHT_DECAY": false, "DAMPENING": 0.0, "EMA_ALPHA": 1e-05, "EMA_UPDATE_PERIOD": 32, "LR_MULT": 0.1, "LR_POLICY": "cos", "MAX_EPOCH": 100, "MIN_LR": 0.0, "MOMENTUM": 0.9, "MTA": false, "NESTEROV": true, "OPTIMIZER": "sgd", "STEPS": [], "WARMUP_EPOCHS": 0, "WARMUP_FACTOR": 0.1, "WEIGHT_DECAY": 1e-05}, "OUT_DIR": "/models/EN-B5-CD", "PORT_RANGE": [10000, 65000], "PREC_TIME": {"NUM_ITER": 30, "WARMUP_ITER": 3}, "REGNET": {"BLOCK_TYPE": "res_bottleneck_block", "BOT_MUL": 1.0, "DEPTH": 10, "GROUP_W": 16, "HEAD_W": 0, "SE_ON": false, "SE_R": 0.25, "STEM_TYPE": "simple_stem_in", "STEM_W": 32, "STRIDE": 2, "W0": 32, "WA": 5.0, "WM": 2.5}, "RESNET": {"NUM_GROUPS": 1, "STRIDE_1X1": true, "TRANS_FUN": "basic_transform", "WIDTH_PER_GROUP": 64}, "RNG_SEED": 1, "TEST": {"BATCH_SIZE": 48, "DATASET": "imagenet", "IM_SIZE": 522, "POWERSAVE_LEVEL": 128, "SPLIT": "val", "WEIGHTS": "/models/EN-B5-CD/model.pyth"}, "TRAIN": {"AUGMENT": "", "AUTO_RESUME": true, "BATCH_SIZE": 64, "CUTMIX_ALPHA": 0.0, "DATASET": "imagenet", "DISTILL": false, "IM_SIZE": 456, "LABEL_SMOOTHING": 0.0, "MIXED_PRECISION": false, "MIXUP_ALPHA": 0.0, "PCA_STD": 0.1, "SPLIT": "train", "TEACHER": "", "TEACHER_NAME": "", "WEIGHTS": ""}, "VERBOSE": true, "VIT": {"CLASSIFIER_TYPE": "token", "C_STEM_DIMS": [], "C_STEM_KERNELS": [], "C_STEM_STRIDES": [], "HIDDEN_DIM": 768, "MLP_DIM": 3072, "NUM_HEADS": 12, "NUM_LAYERS": 12, "PATCH_SIZE": 16, "STEM_TYPE": "patchify"}, "_type": "cfg"}
+[trainer.py: 155]: Model:
+AnyNet(
+  (stem): SimpleStem(
+    (conv): Conv2d(3, 48, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+    (bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (af): SiLU()
+  )
+  (s1): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (dwise): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48, bias=False)
+              (dwise_bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(48, 12, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(12, 48, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (dwise): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=24, bias=False)
+              (dwise_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(24, 6, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(6, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (dwise): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=24, bias=False)
+              (dwise_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(24, 6, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(6, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(24, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(48, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (dwise): Conv2d(48, 48, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=48, bias=False)
+              (dwise_bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(48, 12, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(12, 48, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(48, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (dwise): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=24, bias=False)
+              (dwise_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(24, 6, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(6, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(24, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(12, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s2): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False)
+              (dwise_bn): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(144, 6, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(6, 144, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(32, 20, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False)
+              (dwise_bn): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(144, 6, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(6, 144, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(32, 20, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s3): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(40, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(336, 336, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=336, bias=False)
+              (dwise_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(336, 336, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=336, bias=False)
+              (dwise_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(336, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(56, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(40, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+              (dwise_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(192, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(288, 288, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=288, bias=False)
+              (dwise_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(288, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(288, 288, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=288, bias=False)
+              (dwise_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(288, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(48, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s4): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(64, 56, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(56, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(56, 336, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(336, 336, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=336, bias=False)
+              (dwise_bn): BatchNorm2d(336, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(336, 14, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(14, 336, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(336, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (dwise_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (dwise_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (dwise_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b5): MBConv(
+              (exp): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (dwise_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b6): MBConv(
+              (exp): Conv2d(112, 672, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(672, 672, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=672, bias=False)
+              (dwise_bn): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(672, 28, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(28, 672, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(672, 112, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(112, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(112, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(64, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(288, 288, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=288, bias=False)
+              (dwise_bn): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(288, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+              (dwise_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+              (dwise_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+              (dwise_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b5): MBConv(
+              (exp): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+              (dwise_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(96, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s5): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(128, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(120, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(120, 720, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(720, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(720, 720, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=720, bias=False)
+              (dwise_bn): BatchNorm2d(720, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(720, 30, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(30, 720, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(720, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (dwise_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (dwise_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(960, 960, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=960, bias=False)
+              (dwise_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(960, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(160, 88, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(88, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(128, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(576, 576, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=576, bias=False)
+              (dwise_bn): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(576, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+              (dwise_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+              (dwise_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+              (dwise_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b5): MBConv(
+              (exp): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+              (dwise_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(136, 88, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(88, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s6): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(176, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(160, 960, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(960, 960, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=960, bias=False)
+              (dwise_bn): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(960, 40, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(40, 960, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(960, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b5): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b6): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b7): MBConv(
+              (exp): Conv2d(272, 1632, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1632, 1632, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1632, bias=False)
+              (dwise_bn): BatchNorm2d(1632, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1632, 68, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(68, 1632, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1632, 272, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(272, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(272, 152, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(176, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(816, 816, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=816, bias=False)
+              (dwise_bn): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(816, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b4): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b5): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b6): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(232, 152, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(152, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (s7): BranchStage(
+    (branches): ModuleList(
+      (0): Sequential(
+        (0): Sequential(
+          (0): Conv2d(304, 264, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(264, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(264, 1584, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1584, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(1584, 1584, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1584, bias=False)
+              (dwise_bn): BatchNorm2d(1584, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1584, 66, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(66, 1584, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1584, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(448, 2688, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(2688, 2688, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2688, bias=False)
+              (dwise_bn): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(2688, 112, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(112, 2688, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(2688, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b3): MBConv(
+              (exp): Conv2d(448, 2688, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): ReLU(inplace=True)
+              (dwise): Conv2d(2688, 2688, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2688, bias=False)
+              (dwise_bn): BatchNorm2d(2688, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): ReLU(inplace=True)
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(2688, 112, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(112, 2688, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(2688, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(448, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): Sequential(
+        (0): Sequential(
+          (0): Conv2d(304, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): AnyStage(
+            (b1): MBConv(
+              (exp): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(1392, 1392, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1392, bias=False)
+              (dwise_bn): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(1392, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+            (b2): MBConv(
+              (exp): Conv2d(384, 2304, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (exp_bn): BatchNorm2d(2304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (exp_af): SiLU()
+              (dwise): Conv2d(2304, 2304, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2304, bias=False)
+              (dwise_bn): BatchNorm2d(2304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (dwise_af): SiLU()
+              (se): SE(
+                (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+                (f_ex): Sequential(
+                  (0): Conv2d(2304, 96, kernel_size=(1, 1), stride=(1, 1))
+                  (1): SiLU()
+                  (2): Conv2d(96, 2304, kernel_size=(1, 1), stride=(1, 1))
+                  (3): Sigmoid()
+                )
+              )
+              (lin_proj): Conv2d(2304, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (lin_proj_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            )
+          )
+        )
+        (1): Conv2d(384, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (head): AnyHead(
+    (conv): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (af): SiLU()
+    (avg_pool): AdaptiveAvgPool2d(output_size=(1, 1))
+    (fc): Linear(in_features=2048, out_features=1000, bias=True)
+  )
+)
+[trainer.py: 157]: json_stats: {"_type": "complexity", "acts": 131228454, "flops": 10735999342, "params": 31167414}
+[trainer.py: 335]: Loaded model weights from: /models/EN-B5-CD/model.pyth
+[imagenet.py: 210]: Constructing ImageNet FFCV val...
+[imagenet.py: 256]: Data Path: /app/mbm-pycls/pycls/datasets/data/../ffcv/imagenet/val.ffcv
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "10/1042", "mem": 1138, "time_avg": 0.5269, "time_diff": 0.0336, "top1_err": 13.5417, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "20/1042", "mem": 1138, "time_avg": 0.2807, "time_diff": 0.0334, "top1_err": 4.1667, "top5_err": 0.0000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "30/1042", "mem": 1138, "time_avg": 0.1986, "time_diff": 0.0348, "top1_err": 4.1667, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "40/1042", "mem": 1138, "time_avg": 0.1576, "time_diff": 0.0364, "top1_err": 19.7917, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "50/1042", "mem": 1138, "time_avg": 0.1329, "time_diff": 0.0338, "top1_err": 17.7083, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "60/1042", "mem": 1138, "time_avg": 0.1166, "time_diff": 0.0383, "top1_err": 11.4583, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "70/1042", "mem": 1138, "time_avg": 0.1048, "time_diff": 0.0337, "top1_err": 28.1250, "top5_err": 7.2917}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "80/1042", "mem": 1138, "time_avg": 0.0961, "time_diff": 0.0344, "top1_err": 13.5417, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "90/1042", "mem": 1138, "time_avg": 0.0893, "time_diff": 0.0371, "top1_err": 12.5000, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "100/1042", "mem": 1138, "time_avg": 0.0839, "time_diff": 0.0352, "top1_err": 3.1250, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "110/1042", "mem": 1138, "time_avg": 0.0793, "time_diff": 0.0337, "top1_err": 8.3333, "top5_err": 0.0000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "120/1042", "mem": 1138, "time_avg": 0.0755, "time_diff": 0.0336, "top1_err": 14.5833, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "130/1042", "mem": 1138, "time_avg": 0.0723, "time_diff": 0.0333, "top1_err": 16.6667, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "140/1042", "mem": 1138, "time_avg": 0.0696, "time_diff": 0.0341, "top1_err": 9.3750, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "150/1042", "mem": 1138, "time_avg": 0.0673, "time_diff": 0.0353, "top1_err": 5.2083, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "160/1042", "mem": 1138, "time_avg": 0.0652, "time_diff": 0.0372, "top1_err": 6.2500, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "170/1042", "mem": 1138, "time_avg": 0.0634, "time_diff": 0.0336, "top1_err": 16.6667, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "180/1042", "mem": 1138, "time_avg": 0.0619, "time_diff": 0.0346, "top1_err": 28.1250, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "190/1042", "mem": 1138, "time_avg": 0.0604, "time_diff": 0.0337, "top1_err": 17.7083, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "200/1042", "mem": 1138, "time_avg": 0.0591, "time_diff": 0.0336, "top1_err": 19.7917, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "210/1042", "mem": 1138, "time_avg": 0.0579, "time_diff": 0.0345, "top1_err": 19.7917, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "220/1042", "mem": 1138, "time_avg": 0.0568, "time_diff": 0.0339, "top1_err": 12.5000, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "230/1042", "mem": 1138, "time_avg": 0.0558, "time_diff": 0.0356, "top1_err": 12.5000, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "240/1042", "mem": 1138, "time_avg": 0.0549, "time_diff": 0.0335, "top1_err": 16.6667, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "250/1042", "mem": 1138, "time_avg": 0.0540, "time_diff": 0.0337, "top1_err": 18.7500, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "260/1042", "mem": 1138, "time_avg": 0.0533, "time_diff": 0.0336, "top1_err": 19.7917, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "270/1042", "mem": 1138, "time_avg": 0.0526, "time_diff": 0.0345, "top1_err": 7.2917, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "280/1042", "mem": 1138, "time_avg": 0.0520, "time_diff": 0.0338, "top1_err": 7.2917, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "290/1042", "mem": 1138, "time_avg": 0.0514, "time_diff": 0.0333, "top1_err": 19.7917, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "300/1042", "mem": 1138, "time_avg": 0.0508, "time_diff": 0.0335, "top1_err": 21.8750, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "310/1042", "mem": 1138, "time_avg": 0.0503, "time_diff": 0.0356, "top1_err": 4.1667, "top5_err": 0.0000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "320/1042", "mem": 1138, "time_avg": 0.0498, "time_diff": 0.0345, "top1_err": 14.5833, "top5_err": 1.0417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "330/1042", "mem": 1138, "time_avg": 0.0493, "time_diff": 0.0341, "top1_err": 18.7500, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "340/1042", "mem": 1138, "time_avg": 0.0489, "time_diff": 0.0341, "top1_err": 5.2083, "top5_err": 0.0000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "350/1042", "mem": 1138, "time_avg": 0.0485, "time_diff": 0.0338, "top1_err": 9.3750, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "360/1042", "mem": 1138, "time_avg": 0.0481, "time_diff": 0.0340, "top1_err": 12.5000, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "370/1042", "mem": 1138, "time_avg": 0.0477, "time_diff": 0.0331, "top1_err": 12.5000, "top5_err": 0.0000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "380/1042", "mem": 1138, "time_avg": 0.0474, "time_diff": 0.0336, "top1_err": 13.5417, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "390/1042", "mem": 1138, "time_avg": 0.0471, "time_diff": 0.0343, "top1_err": 15.6250, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "400/1042", "mem": 1138, "time_avg": 0.0467, "time_diff": 0.0346, "top1_err": 22.9167, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "410/1042", "mem": 1138, "time_avg": 0.0464, "time_diff": 0.0331, "top1_err": 11.4583, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "420/1042", "mem": 1138, "time_avg": 0.0461, "time_diff": 0.0340, "top1_err": 16.6667, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "430/1042", "mem": 1138, "time_avg": 0.0459, "time_diff": 0.0352, "top1_err": 18.7500, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "440/1042", "mem": 1138, "time_avg": 0.0456, "time_diff": 0.0332, "top1_err": 28.1250, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "450/1042", "mem": 1138, "time_avg": 0.0453, "time_diff": 0.0336, "top1_err": 16.6667, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "460/1042", "mem": 1138, "time_avg": 0.0451, "time_diff": 0.0336, "top1_err": 25.0000, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "470/1042", "mem": 1138, "time_avg": 0.0448, "time_diff": 0.0336, "top1_err": 20.8333, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "480/1042", "mem": 1138, "time_avg": 0.0446, "time_diff": 0.0337, "top1_err": 23.9583, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "490/1042", "mem": 1138, "time_avg": 0.0444, "time_diff": 0.0342, "top1_err": 34.3750, "top5_err": 12.5000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "500/1042", "mem": 1138, "time_avg": 0.0442, "time_diff": 0.0339, "top1_err": 20.8333, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "510/1042", "mem": 1138, "time_avg": 0.0440, "time_diff": 0.0339, "top1_err": 32.2917, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "520/1042", "mem": 1138, "time_avg": 0.0438, "time_diff": 0.0337, "top1_err": 26.0417, "top5_err": 9.3750}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "530/1042", "mem": 1138, "time_avg": 0.0436, "time_diff": 0.0361, "top1_err": 32.2917, "top5_err": 10.4167}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "540/1042", "mem": 1138, "time_avg": 0.0435, "time_diff": 0.0372, "top1_err": 22.9167, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "550/1042", "mem": 1138, "time_avg": 0.0433, "time_diff": 0.0346, "top1_err": 27.0833, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "560/1042", "mem": 1138, "time_avg": 0.0432, "time_diff": 0.0361, "top1_err": 25.0000, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "570/1042", "mem": 1138, "time_avg": 0.0430, "time_diff": 0.0340, "top1_err": 23.9583, "top5_err": 7.2917}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "580/1042", "mem": 1138, "time_avg": 0.0429, "time_diff": 0.0343, "top1_err": 15.6250, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "590/1042", "mem": 1138, "time_avg": 0.0427, "time_diff": 0.0337, "top1_err": 11.4583, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "600/1042", "mem": 1138, "time_avg": 0.0426, "time_diff": 0.0333, "top1_err": 13.5417, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "610/1042", "mem": 1138, "time_avg": 0.0425, "time_diff": 0.0339, "top1_err": 27.0833, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "620/1042", "mem": 1138, "time_avg": 0.0423, "time_diff": 0.0332, "top1_err": 25.0000, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "630/1042", "mem": 1138, "time_avg": 0.0422, "time_diff": 0.0335, "top1_err": 22.9167, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "640/1042", "mem": 1138, "time_avg": 0.0420, "time_diff": 0.0334, "top1_err": 11.4583, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "650/1042", "mem": 1138, "time_avg": 0.0419, "time_diff": 0.0336, "top1_err": 34.3750, "top5_err": 9.3750}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "660/1042", "mem": 1138, "time_avg": 0.0418, "time_diff": 0.0334, "top1_err": 20.8333, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "670/1042", "mem": 1138, "time_avg": 0.0417, "time_diff": 0.0342, "top1_err": 33.3333, "top5_err": 7.2917}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "680/1042", "mem": 1138, "time_avg": 0.0416, "time_diff": 0.0347, "top1_err": 23.9583, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "690/1042", "mem": 1138, "time_avg": 0.0415, "time_diff": 0.0330, "top1_err": 30.2083, "top5_err": 9.3750}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "700/1042", "mem": 1138, "time_avg": 0.0414, "time_diff": 0.0337, "top1_err": 21.8750, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "710/1042", "mem": 1138, "time_avg": 0.0413, "time_diff": 0.0341, "top1_err": 28.1250, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "720/1042", "mem": 1138, "time_avg": 0.0412, "time_diff": 0.0337, "top1_err": 20.8333, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "730/1042", "mem": 1138, "time_avg": 0.0411, "time_diff": 0.0341, "top1_err": 19.7917, "top5_err": 7.2917}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "740/1042", "mem": 1138, "time_avg": 0.0410, "time_diff": 0.0351, "top1_err": 25.0000, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "750/1042", "mem": 1138, "time_avg": 0.0409, "time_diff": 0.0342, "top1_err": 20.8333, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "760/1042", "mem": 1138, "time_avg": 0.0408, "time_diff": 0.0332, "top1_err": 18.7500, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "770/1042", "mem": 1138, "time_avg": 0.0407, "time_diff": 0.0358, "top1_err": 25.0000, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "780/1042", "mem": 1138, "time_avg": 0.0406, "time_diff": 0.0337, "top1_err": 29.1667, "top5_err": 9.3750}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "790/1042", "mem": 1138, "time_avg": 0.0405, "time_diff": 0.0334, "top1_err": 19.7917, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "800/1042", "mem": 1138, "time_avg": 0.0405, "time_diff": 0.0345, "top1_err": 23.9583, "top5_err": 12.5000}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "810/1042", "mem": 1138, "time_avg": 0.0404, "time_diff": 0.0346, "top1_err": 27.0833, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "820/1042", "mem": 1138, "time_avg": 0.0403, "time_diff": 0.0340, "top1_err": 17.7083, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "830/1042", "mem": 1138, "time_avg": 0.0403, "time_diff": 0.0342, "top1_err": 27.0833, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "840/1042", "mem": 1138, "time_avg": 0.0402, "time_diff": 0.0349, "top1_err": 21.8750, "top5_err": 7.2917}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "850/1042", "mem": 1138, "time_avg": 0.0401, "time_diff": 0.0332, "top1_err": 33.3333, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "860/1042", "mem": 1138, "time_avg": 0.0401, "time_diff": 0.0332, "top1_err": 17.7083, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "870/1042", "mem": 1138, "time_avg": 0.0400, "time_diff": 0.0330, "top1_err": 22.9167, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "880/1042", "mem": 1138, "time_avg": 0.0399, "time_diff": 0.0332, "top1_err": 34.3750, "top5_err": 9.3750}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "890/1042", "mem": 1138, "time_avg": 0.0398, "time_diff": 0.0336, "top1_err": 28.1250, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "900/1042", "mem": 1138, "time_avg": 0.0398, "time_diff": 0.0333, "top1_err": 28.1250, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "910/1042", "mem": 1138, "time_avg": 0.0397, "time_diff": 0.0335, "top1_err": 22.9167, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "920/1042", "mem": 1138, "time_avg": 0.0397, "time_diff": 0.0351, "top1_err": 18.7500, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "930/1042", "mem": 1138, "time_avg": 0.0396, "time_diff": 0.0354, "top1_err": 20.8333, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "940/1042", "mem": 1138, "time_avg": 0.0396, "time_diff": 0.0339, "top1_err": 21.8750, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "950/1042", "mem": 1138, "time_avg": 0.0395, "time_diff": 0.0331, "top1_err": 40.6250, "top5_err": 13.5417}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "960/1042", "mem": 1138, "time_avg": 0.0395, "time_diff": 0.0336, "top1_err": 17.7083, "top5_err": 5.2083}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "970/1042", "mem": 1138, "time_avg": 0.0394, "time_diff": 0.0344, "top1_err": 26.0417, "top5_err": 6.2500}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "980/1042", "mem": 1138, "time_avg": 0.0394, "time_diff": 0.0370, "top1_err": 13.5417, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "990/1042", "mem": 1138, "time_avg": 0.0394, "time_diff": 0.0351, "top1_err": 19.7917, "top5_err": 3.1250}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "1000/1042", "mem": 1138, "time_avg": 0.0393, "time_diff": 0.0331, "top1_err": 9.3750, "top5_err": 2.0833}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "1010/1042", "mem": 1138, "time_avg": 0.0392, "time_diff": 0.0352, "top1_err": 35.4167, "top5_err": 11.4583}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "1020/1042", "mem": 1138, "time_avg": 0.0392, "time_diff": 0.0338, "top1_err": 40.6250, "top5_err": 8.3333}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "1030/1042", "mem": 1138, "time_avg": 0.0391, "time_diff": 0.0355, "top1_err": 14.5833, "top5_err": 4.1667}
+[meters.py: 238]: json_stats: {"_type": "test_iter", "epoch": "1/100", "iter": "1040/1042", "mem": 1138, "time_avg": 0.0391, "time_diff": 0.0331, "top1_err": 5.2083, "top5_err": 2.0833}
+[meters.py: 260]: json_stats: {"_type": "test_epoch", "epoch": "1/100", "mem": 1138, "min_top1_err": 21.2500, "min_top5_err": 5.7680, "time_avg": 0.0395, "time_epoch": 41.1608, "top1_err": 21.2500, "top5_err": 5.7680}
