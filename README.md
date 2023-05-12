@@ -117,17 +117,6 @@ After the above commands, the expected structure of `${path_to_imagenet}` should
  ├── ......
 ```
 
-Mount the folder while starting the container with:
-```
-docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet --net host --name stretch-ae kalineid/nn_stretch /bin/bash
-```
-
-In the container, create a symlink to path of the imagenet (follow [this doc](https://github.com/kaleid-liner/mbm-pycls/blob/main/docs/DATA.md) for more details):
-```
-mkdir -p /app/mbm-pycls/pycls/datasets/data
-ln -sv /imagenet /app/mbm-pycls/pycls/datasets/data/imagenet
-```
-
 ### Step 2: Preprocess for FFCV
 
 Most of our models are trained using [ffcv](https://github.com/libffcv/ffcv) dataloader for faster training. This needs extra steps to preprocess the dataset. Follow [the instructions](https://github.com/libffcv/ffcv-imagenet/blob/main/README.md) at [ffcv-imagenet](https://github.com/libffcv/ffcv-imagenet) to get `train.ffcv` and `val.ffcv`. You will need to execute the following commands:
@@ -146,22 +135,28 @@ cd examples;
 ./write_imagenet.sh 500 0.50 90
 ```
 
-After that, rename the files and create a symlink to `${WRITE_DIR}`:
+After that, rename the files and move to `${path_to_imagenet}`:
 ```
-mv ${WRITE_DIR}/train_500_0.50_90.ffcv ${WRITE_DIR}/train.ffcv
-mv ${WRITE_DIR}/val_500_0.50_90.ffcv ${WRITE_DIR}/val.ffcv
-mkdir -p /app/mbm-pycls/pycls/datasets/ffcv
-ln -sv ${WRITE_DIR} /app/mbm-pycls/pycls/datasets/ffcv/imagenet
+mv ${WRITE_DIR}/train_500_0.50_90.ffcv ${path_to_imagenet}/train.ffcv
+mv ${WRITE_DIR}/val_500_0.50_90.ffcv ${path_to_imagenet}/val.ffcv
 ```
 
 ### Step 3: Training and Evaluation
 
-We provide trained model weights at [zenodo](). After downloading, extract the models and mount it to docker container with:
+We provide trained model weights at [zenodo](). After downloading, extract the models and mount the models, configs and datasets to docker container with:
 ```
 docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet -v ${path_to_models}:/models --net host --name stretch-ae --shm-size=32g kalineid/nn_stretch /bin/bash
 ```
 
 Note that `--shm-size=xxx` is needed. The default 64M shared memory is not enough for the pytorch dataloader.
+
+In the container, create a symlink to `/imagenet` (follow [this doc](https://github.com/kaleid-liner/mbm-pycls/blob/main/docs/DATA.md) for more details):
+```
+mkdir -p /app/mbm-pycls/pycls/datasets/data
+ln -sv /imagenet /app/mbm-pycls/pycls/datasets/data/imagenet
+mkdir -p /app/mbm-pycls/pycls/datasets/ffcv
+ln -sv /imagenet /app/mbm-pycls/pycls/datasets/ffcv/imagenet
+```
 
 To evaluate the accuracy using trained models:
 ```
