@@ -89,7 +89,7 @@ The CSV table are consisted of three columns:
 - `latency`: Inference latency of the model.
 - `energy`: Inference energy of the model. It could be 0 if the device is not rooted or hardware counters are unavailable. It could be less than 0 if the device is connected to the device via USB. To profile the energy accurately, WiFi ADB is recommended.
 
-## Accuracy Evluation
+## Training and Accuracy Evluation
 
 ImageNet is a very large dataset. If you haven't used ImageNet before, you need to first prepare the dataset. If you already have ImageNet on your host computer, you can skip Step 1.
 
