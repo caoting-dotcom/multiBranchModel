@@ -189,7 +189,7 @@ The arguments are the same with `run_pipeline.py`.
 
 #### Supernet Training and Evaluation
 
-To train and evaluate the accuracy of the supernet, please use this [code base](src/pycls). Follow [README](https://github.com/kaleid-liner/pycls/blob/main/README.md) to prepare the environment and dataset, then train and evaluate the supernet with:
+To train and evaluate the accuracy of the supernet, please use [src/pycls](https://github.com/kaleid-liner/pycls). Follow [README](https://github.com/kaleid-liner/pycls/blob/main/README.md) to prepare the environment and dataset, then train and evaluate the supernet with:
 
 ```
 ./tools/run_net.py --mode train \
