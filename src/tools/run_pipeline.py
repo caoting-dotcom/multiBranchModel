@@ -285,11 +285,11 @@ def main():
         predictor.push(model_path, device_model_path)
 
         latency, energy = predictor.predict(device_model_path)
-        results = results.append({
+        results = pd.concat([results, pd.DataFrame([{
             "cfg": cfg_path,
             "latency": latency,
             "energy": energy,
-        }, ignore_index=True)
+        }])], ignore_index=True)
         results.to_csv(output_csv, index=False)
         logger.info("Result appended to {}".format(output_csv))
 
