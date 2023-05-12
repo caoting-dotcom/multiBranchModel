@@ -73,6 +73,13 @@ Then in docker:
 python run_pipeline.py --configs /data/pixel --adb_host host.docker.internal
 ```
 
+### Use a real input image
+
+If you want to use a real input image for latency measurements, you can specify this argument for `run_pipeline.py`
+```
+--input_image images/ILSVRC2012_val_00000001.JPEG
+```
+
 ### Evaluation output
 
 Check the [video](tutorial/end2end-pipeline.mp4) to see the expected stdout output. The final results will be generated at `/workspace/data/result.csv` of the container.
@@ -172,6 +179,13 @@ You can also train and evaluate a model yourself through the following command:
 ```
 python /app/mbm-pycls/tools/run_net.py --cfg /data/mi/EN-B5-CD.yaml --mode train|test OUT_DIR ${out_dir} NUM_GPUS ${num_gpus} DATA_LOADER.MODE ffcv
 ```
+
+If you want to evaluate latency and accuracy in a single run, use this script:
+```
+./eval_lat_acc.sh /data/mi/EN-B5-CD.yaml {arg1, arg2...}
+```
+
+The arguments are the same with `run_pipeline.py`.
 
 ## Compilation of `benchmark_model`
 
