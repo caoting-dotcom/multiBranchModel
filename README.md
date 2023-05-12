@@ -150,7 +150,7 @@ mv ${WRITE_DIR}/val_500_0.50_90.ffcv ${path_to_imagenet}/val.ffcv
 
 ### Step 3: Training and Evaluation
 
-We provide trained model weights at [zenodo](https://zenodo.org/record/7923746#.ZF4nFnZBxhE). After downloading, extract the models and mount the models, configs and datasets to docker container with:
+We provide trained model weights at [zenodo](https://zenodo.org/record/7923746). After downloading, extract the models and mount the models, configs and datasets to docker container with:
 ```
 docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet -v ${path_to_models}:/models --net host --name stretch-ae --shm-size=32g kalineid/nn_stretch /bin/bash
 ```
