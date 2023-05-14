@@ -1,0 +1,402 @@
+INFO: Options provided by the client:
+  Inherited 'common' options: --isatty=1 --terminal_columns=214
+INFO: Reading rc options for 'build' from /workspace/tensorflow/.bazelrc:
+  Inherited 'common' options: --experimental_repo_remote_exec
+INFO: Reading rc options for 'build' from /etc/bazel.bazelrc:
+  'build' options: --action_env=DOCKER_CACHEBUSTER=1681941469448982803 --host_action_env=DOCKER_HOST_CACHEBUSTER=1681941469510372738
+INFO: Reading rc options for 'build' from /workspace/tensorflow/.bazelrc:
+  'build' options: --define framework_shared_object=true --define=use_fast_cpp_protos=true --define=allow_oversize_protos=true --spawn_strategy=standalone -c opt --announce_rc --define=grpc_no_ares=true --noincompatible_remove_legacy_whole_archive --enable_platform_specific_config --define=with_xla_support=true --config=short_logs --config=v2 --define=no_aws_support=true --define=no_hdfs_support=true --experimental_cc_shared_library
+INFO: Reading rc options for 'build' from /workspace/tensorflow/.tf_configure.bazelrc:
+  'build' options: --action_env PYTHON_BIN_PATH=/usr/bin/python3 --action_env PYTHON_LIB_PATH=/usr/lib/python3/dist-packages --python_path=/usr/bin/python3 --action_env ANDROID_NDK_HOME=/android/ndk --action_env ANDROID_NDK_API_LEVEL=21 --action_env ANDROID_BUILD_TOOLS_VERSION=31.0.0 --action_env ANDROID_SDK_API_LEVEL=23 --action_env ANDROID_SDK_HOME=/android/sdk
+INFO: Reading rc options for 'build' from /workspace/tensorflow/.bazelrc:
+  'build' options: --deleted_packages=tensorflow/compiler/mlir/tfrt,tensorflow/compiler/mlir/tfrt/benchmarks,tensorflow/compiler/mlir/tfrt/jit/python_binding,tensorflow/compiler/mlir/tfrt/jit/transforms,tensorflow/compiler/mlir/tfrt/python_tests,tensorflow/compiler/mlir/tfrt/tests,tensorflow/compiler/mlir/tfrt/tests/ir,tensorflow/compiler/mlir/tfrt/tests/analysis,tensorflow/compiler/mlir/tfrt/tests/jit,tensorflow/compiler/mlir/tfrt/tests/lhlo_to_tfrt,tensorflow/compiler/mlir/tfrt/tests/tf_to_corert,tensorflow/compiler/mlir/tfrt/tests/tf_to_tfrt_data,tensorflow/compiler/mlir/tfrt/tests/saved_model,tensorflow/compiler/mlir/tfrt/transforms/lhlo_gpu_to_tfrt_gpu,tensorflow/core/runtime_fallback,tensorflow/core/runtime_fallback/conversion,tensorflow/core/runtime_fallback/kernel,tensorflow/core/runtime_fallback/opdefs,tensorflow/core/runtime_fallback/runtime,tensorflow/core/runtime_fallback/util,tensorflow/core/tfrt/common,tensorflow/core/tfrt/eager,tensorflow/core/tfrt/eager/backends/cpu,tensorflow/core/tfrt/eager/backends/gpu,tensorflow/core/tfrt/eager/core_runtime,tensorflow/core/tfrt/eager/cpp_tests/core_runtime,tensorflow/core/tfrt/gpu,tensorflow/core/tfrt/run_handler_thread_pool,tensorflow/core/tfrt/runtime,tensorflow/core/tfrt/saved_model,tensorflow/core/tfrt/graph_executor,tensorflow/core/tfrt/saved_model/tests,tensorflow/core/tfrt/tpu,tensorflow/core/tfrt/utils
+INFO: Found applicable config definition build:short_logs in file /workspace/tensorflow/.bazelrc: --output_filter=DONT_MATCH_ANYTHING
+INFO: Found applicable config definition build:v2 in file /workspace/tensorflow/.bazelrc: --define=tf_api_version=2 --action_env=TF2_BEHAVIOR=1
+INFO: Found applicable config definition build:android_arm64 in file /workspace/tensorflow/.bazelrc: --config=android --cpu=arm64-v8a --fat_apk_cpu=arm64-v8a
+INFO: Found applicable config definition build:android in file /workspace/tensorflow/.bazelrc: --crosstool_top=//external:android/crosstool --host_crosstool_top=@bazel_tools//tools/cpp:toolchain --noenable_platform_specific_config --copt=-w --cxxopt=-std=c++14 --host_cxxopt=-std=c++14 --define=with_xla_support=false
+INFO: Analyzed target //tensorflow/lite/tools/benchmark:benchmark_model (0 packages loaded, 0 targets configured).
+INFO: Found 1 target...
+Target //tensorflow/lite/tools/benchmark:benchmark_model up-to-date:
+  bazel-bin/tensorflow/lite/tools/benchmark/benchmark_model
+INFO: Elapsed time: 1.656s, Critical Path: 1.54s
+INFO: 4 processes: 1 internal, 3 local.
+INFO: Build completed successfully, 4 total actions
+bazel-bin/tensorflow/lite/tools/benchmark/benchmark_model: 1 file pushed, 0 skipped. 1570.7 MB/s (6673144 bytes in 0.004s)
+STARTING!
+Log parameter values verbosely: [0]
+Min num runs: [2]
+Min runs duration (seconds): [0]
+Num threads: [4]
+Min warmup runs: [1]
+Min warmup runs duration (seconds): [0]
+Graph: [/data/local/tmp/R-34-DG.tflite]
+DG Graph: []
+Input layers: [input1]
+Input shapes: [1,224,224,3]
+Input value files: [input1:/data/local/tmp/input.bin]
+Enable op profiling: [1]
+Output class label: [1]
+#threads used for CPU inference: [4]
+Max number of delegated partitions: [100]
+Use gpu: [1]
+Use Hexagon: [1]
+Hexagon powersave_level: [128]
+Hexagon support computing of head: [0]
+Use xnnpack: [0]
+Loaded model /data/local/tmp/R-34-DG.tflite
+INFO: Initialized TensorFlow Lite runtime.
+INFO: Created TensorFlow Lite delegate for GPU.
+GPU delegate created.
+WARNING: Hexagon delegate: cannot have this many 100 partitions, and will cap to at most 16 partitions.
+
+loaded libcdsprpc.so
+Hexagon delegate created.
+Going to apply 2 delegates one after another.
+ERROR: In modifyGraphWithDelegateImpl
+ERROR: STEP 2
+ERROR: In Partition
+INFO: TfLiteHexagonDelegate delegate: 49 nodes delegated out of 96 nodes with 4 partitions.
+
+INFO: Replacing 49 node(s) with delegate (TfLiteHexagonDelegate) node, yielding 9 partitions.
+ERROR: AFTER Prepare
+ERROR: after modifyGraphWithDelegate
+Explicitly applied Hexagon delegate, and the model graph will be partially executed by the delegate w/ 4 delegate kernels.
+ERROR: In modifyGraphWithDelegateImpl
+ERROR: STEP 2
+ERROR: In delegate prepare
+ERROR: Before ReplaceNodeSubsetsWithDelegateKernels
+ERROR: In Partition
+ERROR: Following operations are not supported by GPU delegate:
+CONCATENATION: 
+CONV_2D: 
+DELEGATE TfLiteHexagonDelegate: Operation is not supported.
+FULLY_CONNECTED: 
+MAX_POOL_2D: 
+MEAN: 
+QUANTIZE: 
+37 operations will run on the GPU, and the remaining 14 operations will run on the CPU.
+ERROR: After GetOpsToReplace
+INFO: Replacing 37 node(s) with delegate (TfLiteGpuDelegateV2) node, yielding 9 partitions.
+INFO: Initialized OpenCL-based API.
+INFO: Created 4 GPU delegate kernels.
+ERROR: AFTER Prepare
+ERROR: after modifyGraphWithDelegate
+Explicitly applied GPU delegate, and the model graph will be partially executed by the delegate w/ 4 delegate kernels.
+Tensor # 0 is named serving_default_input_1:0 but flags call it input1
+The input model file size (MB): 14.6334
+Initialized session in 1475.81ms.
+Running benchmark for at least 1 iterations and at least 0 seconds but terminate if exceeding 150 seconds.
+Map::Finished: 1684051998299835904
+Unmap::Queued: 1684051998307874048
+Kernel::Started: 1684051998313532160
+Kernel::Finished: 1684051998314353920
+Kernel::Started: 1684051998314354944
+Kernel::Finished: 1684051998315072000
+Kernel::Started: 1684051998315072000
+Kernel::Finished: 1684051998315177984
+Kernel::Started: 1684051998315179008
+Kernel::Finished: 1684051998315897088
+Kernel::Started: 1684051998315897856
+Kernel::Finished: 1684051998316622080
+Map::Finished: 1684051998316811008
+Map::Finished: 1684051998308433152
+Unmap::Queued: 1684051998317362944
+Kernel::Started: 1684051998317775872
+Kernel::Finished: 1684051998318273024
+Kernel::Started: 1684051998318274048
+Kernel::Finished: 1684051998318580992
+Kernel::Started: 1684051998318582016
+Kernel::Finished: 1684051998318653952
+Kernel::Started: 1684051998318654976
+Kernel::Finished: 1684051998318962176
+Kernel::Started: 1684051998318963968
+Kernel::Finished: 1684051998319278080
+Kernel::Started: 1684051998319278080
+Kernel::Finished: 1684051998319585024
+Kernel::Started: 1684051998319587072
+Kernel::Finished: 1684051998319896832
+Map::Finished: 1684051998320034048
+Map::Finished: 1684051998317935872
+Unmap::Queued: 1684051998320552960
+Kernel::Started: 1684051998321065984
+Kernel::Finished: 1684051998321448192
+Kernel::Started: 1684051998321448960
+Kernel::Finished: 1684051998321816832
+Kernel::Started: 1684051998321818112
+Kernel::Finished: 1684051998321871872
+Kernel::Started: 1684051998321872896
+Kernel::Finished: 1684051998322242048
+Kernel::Started: 1684051998322242048
+Kernel::Finished: 1684051998322609920
+Kernel::Started: 1684051998322611200
+Kernel::Finished: 1684051998322983936
+Kernel::Started: 1684051998322984960
+Kernel::Finished: 1684051998323347968
+Kernel::Started: 1684051998323348992
+Kernel::Finished: 1684051998323712000
+Kernel::Started: 1684051998323719936
+Kernel::Finished: 1684051998324071936
+Map::Finished: 1684051998324160000
+Map::Finished: 1684051998321181184
+Unmap::Queued: 1684051998324732160
+Kernel::Started: 1684051998325160960
+Kernel::Finished: 1684051998325792000
+Kernel::Started: 1684051998325793024
+Kernel::Finished: 1684051998326267904
+Kernel::Started: 1684051998326268928
+Kernel::Finished: 1684051998326350848
+Kernel::Started: 1684051998326351872
+Kernel::Finished: 1684051998326829824
+Kernel::Started: 1684051998326831104
+Kernel::Finished: 1684051998327304960
+Map::Finished: 1684051998327446016
+GPU stage 0: waiting for 8773
+GPU stage 1: waiting for 2532
+GPU stage 2: waiting for 3513
+GPU stage 3: waiting for 2618
+DSP stage 0: waiting for 1380
+DSP stage 1: waiting for 824
+DSP stage 2: waiting for 1596
+DSP stage 3: waiting for 1805
+#Power (avg): 0
+#Power (moving): 0
+CPU usage: 95636.9 device: 0
+count=1 curr=29456
+
+Running benchmark for at least 2 iterations and at least 0 seconds but terminate if exceeding 150 seconds.
+Unmap::Queued: 1684051998328748032
+Map::Finished: 1684051998328978176
+Unmap::Queued: 1684051998333059072
+Kernel::Started: 1684051998333369856
+Kernel::Finished: 1684051998334188032
+Kernel::Started: 1684051998334189056
+Kernel::Finished: 1684051998334907904
+Kernel::Started: 1684051998334908928
+Kernel::Finished: 1684051998335014144
+Kernel::Started: 1684051998335015168
+Kernel::Finished: 1684051998335734016
+Kernel::Started: 1684051998335734016
+Kernel::Finished: 1684051998336459008
+Map::Finished: 1684051998336641024
+Unmap::Queued: 1684051998328762112
+Map::Finished: 1684051998333394944
+Unmap::Queued: 1684051998337224960
+Kernel::Started: 1684051998337612032
+Kernel::Finished: 1684051998338102016
+Kernel::Started: 1684051998338103040
+Kernel::Finished: 1684051998338409984
+Kernel::Started: 1684051998338409984
+Kernel::Finished: 1684051998338478080
+Kernel::Started: 1684051998338479104
+Kernel::Finished: 1684051998338785792
+Kernel::Started: 1684051998338787072
+Kernel::Finished: 1684051998339101952
+Kernel::Started: 1684051998339102976
+Kernel::Finished: 1684051998339410944
+Kernel::Started: 1684051998339411968
+Kernel::Finished: 1684051998339719936
+Map::Finished: 1684051998339858944
+Unmap::Queued: 1684051998328788992
+Map::Finished: 1684051998337640960
+Unmap::Queued: 1684051998340406784
+Kernel::Started: 1684051998340684800
+Kernel::Finished: 1684051998341073152
+Kernel::Started: 1684051998341073920
+Kernel::Finished: 1684051998341440000
+Kernel::Started: 1684051998341441024
+Kernel::Finished: 1684051998341495040
+Kernel::Started: 1684051998341496064
+Kernel::Finished: 1684051998341875968
+Kernel::Started: 1684051998341876992
+Kernel::Finished: 1684051998342242048
+Kernel::Started: 1684051998342243072
+Kernel::Finished: 1684051998342600960
+Kernel::Started: 1684051998342601984
+Kernel::Finished: 1684051998342968064
+Kernel::Started: 1684051998342968832
+Kernel::Finished: 1684051998343331072
+Kernel::Started: 1684051998343339008
+Kernel::Finished: 1684051998343697152
+Map::Finished: 1684051998343781888
+Unmap::Queued: 1684051998328800000
+Map::Finished: 1684051998340734976
+Unmap::Queued: 1684051998344355072
+Kernel::Started: 1684051998344582912
+Kernel::Finished: 1684051998345225984
+Kernel::Started: 1684051998345227008
+Kernel::Finished: 1684051998345716992
+Kernel::Started: 1684051998345718016
+Kernel::Finished: 1684051998345793024
+Kernel::Started: 1684051998345794048
+Kernel::Finished: 1684051998346262016
+Kernel::Started: 1684051998346263040
+Kernel::Finished: 1684051998346744064
+Map::Finished: 1684051998346878976
+GPU stage 0: waiting for 3663
+GPU stage 1: waiting for 2684
+GPU stage 2: waiting for 3586
+GPU stage 3: waiting for 2638
+DSP stage 0: waiting for 1242
+DSP stage 1: waiting for 808
+DSP stage 2: waiting for 1315
+DSP stage 3: waiting for 1231
+#Power (avg): 0
+#Power (moving): 0
+CPU usage: 95636.9 device: 0
+Unmap::Queued: 1684051998350095872
+Map::Finished: 1684051998350313984
+Unmap::Queued: 1684051998354206976
+Kernel::Started: 1684051998354528000
+Kernel::Finished: 1684051998355348224
+Kernel::Started: 1684051998355348224
+Kernel::Finished: 1684051998356066048
+Kernel::Started: 1684051998356066816
+Kernel::Finished: 1684051998356171008
+Kernel::Started: 1684051998356172032
+Kernel::Finished: 1684051998356890880
+Kernel::Started: 1684051998356890880
+Kernel::Finished: 1684051998357615872
+Map::Finished: 1684051998357808128
+Unmap::Queued: 1684051998350109952
+Map::Finished: 1684051998354554880
+Unmap::Queued: 1684051998358517760
+Kernel::Started: 1684051998358896128
+Kernel::Finished: 1684051998359382016
+Kernel::Started: 1684051998359383040
+Kernel::Finished: 1684051998359688960
+Kernel::Started: 1684051998359689984
+Kernel::Finished: 1684051998359759104
+Kernel::Started: 1684051998359759104
+Kernel::Finished: 1684051998360069888
+Kernel::Started: 1684051998360070912
+Kernel::Finished: 1684051998360380928
+Kernel::Started: 1684051998360382208
+Kernel::Finished: 1684051998360690176
+Kernel::Started: 1684051998360690944
+Kernel::Finished: 1684051998361004032
+Map::Finished: 1684051998361135872
+Unmap::Queued: 1684051998350136064
+Map::Finished: 1684051998358926080
+Unmap::Queued: 1684051998361777920
+Kernel::Started: 1684051998362068992
+Kernel::Finished: 1684051998362449920
+Kernel::Started: 1684051998362449920
+Kernel::Finished: 1684051998362828032
+Kernel::Started: 1684051998362829056
+Kernel::Finished: 1684051998362885888
+Kernel::Started: 1684051998362885888
+Kernel::Finished: 1684051998363264000
+Kernel::Started: 1684051998363265024
+Kernel::Finished: 1684051998363638016
+Kernel::Started: 1684051998363639040
+Kernel::Finished: 1684051998363995904
+Kernel::Started: 1684051998363996928
+Kernel::Finished: 1684051998364358912
+Kernel::Started: 1684051998364360192
+Kernel::Finished: 1684051998364721920
+Kernel::Started: 1684051998364731136
+Kernel::Finished: 1684051998365093888
+Map::Finished: 1684051998365175040
+Unmap::Queued: 1684051998350152960
+Map::Finished: 1684051998362114048
+Unmap::Queued: 1684051998365896960
+Kernel::Started: 1684051998366136064
+Kernel::Finished: 1684051998366771968
+Kernel::Started: 1684051998366772992
+Kernel::Finished: 1684051998367264000
+Kernel::Started: 1684051998367265024
+Kernel::Finished: 1684051998367341056
+Kernel::Started: 1684051998367342080
+Kernel::Finished: 1684051998367810048
+Kernel::Started: 1684051998367810048
+Kernel::Finished: 1684051998368290816
+Map::Finished: 1684051998368408832
+GPU stage 0: waiting for 3774
+GPU stage 1: waiting for 2764
+GPU stage 2: waiting for 3748
+GPU stage 3: waiting for 2712
+DSP stage 0: waiting for 1448
+DSP stage 1: waiting for 865
+DSP stage 2: waiting for 1330
+DSP stage 3: waiting for 1343
+#Power (avg): 0
+#Power (moving): 0
+CPU usage: 95636.9 device: 0
+count=2 first=21247 curr=23771 min=21247 max=23771 avg=22509 std=1262
+
+Inference timings in us: Init: 1475810, First inference: 29456, Warmup (avg): 29456, Inference (avg): 22509
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Memory footprint delta from the start of the tool (MB): init=78.5078 overall=78.5078
+Profiling Info for Benchmark Initialization:
+============================== Run Order ==============================
+                     [node type]                  [start]         [first]        [avg ms]            [%]          [cdf%]          [mem KB]      [times called]  [Name]
+         ModifyGraphWithDelegate                   95.048         189.632         697.170        92.005%         92.005%         45992.000              2       ModifyGraphWithDelegate/0
+                 AllocateTensors                  952.741         121.103          40.390         7.995%        100.000%             0.000              3       AllocateTensors/0
+
+============================== Top by Computation Time ==============================
+                     [node type]                  [start]         [first]        [avg ms]            [%]          [cdf%]          [mem KB]      [times called]  [Name]
+         ModifyGraphWithDelegate                   95.048         189.632         697.170        92.005%         92.005%         45992.000              2       ModifyGraphWithDelegate/0
+                 AllocateTensors                  952.741         121.103          40.390         7.995%        100.000%             0.000              3       AllocateTensors/0
+
+Number of nodes executed: 2
+============================== Summary by node type ==============================
+                     [Node type]          [count]         [avg ms]          [avg %]         [cdf %]       [mem KB]      [times called]
+         ModifyGraphWithDelegate                1         1394.340          92.005%         92.005%      45992.000              2
+                 AllocateTensors                1          121.170           7.995%        100.000%          0.000              3
+
+Timings (microseconds): count=1 curr=1515510
+Memory (bytes): count=0
+2 nodes observed
+
+
+
+Operator-wise Profiling Info for Regular Benchmark Runs:
+============================== Run Order ==============================
+                     [node type]                  [start]         [first]        [avg ms]            [%]          [cdf%]          [mem KB]      [times called]  [Name]
+                        QUANTIZE                    0.024           0.094           0.093         0.424%          0.424%             0.000              1       [tfl.quantize]:0
+                         CONV_2D                    0.117           3.730           3.640        16.512%         16.936%             0.000              1       [anynet/st_cpu_relu/Relu;anynet/st_cpu_bn/FusedBatchNormV3;anynet/s2_gpu_b1_0_bn/FusedBatchNormV3/ReadVariableOp;anynet/st_cpu_conv/BiasAdd;anynet/s2_gpu_b3_1_bn/FusedBatchNormV3;anynet/st_cpu_conv/Conv2D]:1
+                     MAX_POOL_2D                    3.758           0.176           0.176         0.798%         17.734%             0.000              1       [anynet/st_cpu_mp_start_pool/MaxPool]:2
+           TfLiteHexagonDelegate                    3.934           0.009           0.009         0.041%         17.775%             0.000              1       [anynet/s1_dsp_b3_relu/Relu;anynet/s1_dsp_b3_add/add]:96
+             TfLiteGpuDelegateV2                    3.943           0.384           0.388         1.760%         19.535%             0.000              1       [anynet/s1_gpu_b2_relu/Relu;anynet/s1_gpu_b2_add/add]:100
+                   CONCATENATION                    4.332           3.750           3.809        17.281%         36.816%             0.000              1       [anynet/s1_cpu_mp_start_mp_end_concat/concat]:20
+           TfLiteHexagonDelegate                    8.142           0.010           0.010         0.045%         36.861%             0.000              1       [anynet/s2_dsp_b3_relu/Relu;anynet/s2_dsp_b3_add/add]:97
+             TfLiteGpuDelegateV2                    8.152           0.482           0.484         2.196%         39.056%             0.000              1       [anynet/s2_gpu_b3_relu/Relu;anynet/s2_gpu_b3_add/add]:101
+                   CONCATENATION                    8.636           2.746           2.788        12.645%         51.701%             0.000              1       [anynet/s2_cpu_mp_start_mp_end_concat/concat]:41
+           TfLiteHexagonDelegate                   11.424           0.009           0.009         0.043%         51.744%             0.000              1       [anynet/s3_dsp_b6_relu/Relu;anynet/s3_dsp_b6_add/add]:98
+             TfLiteGpuDelegateV2                   11.434           0.325           0.336         1.522%         53.266%             0.000              1       [anynet/s3_gpu_b4_relu/Relu;anynet/s3_gpu_b4_add/add]:102
+                   CONCATENATION                   11.770           3.639           3.714        16.847%         70.113%             0.000              1       [anynet/s3_cpu_mp_start_mp_end_concat/concat]:74
+             TfLiteGpuDelegateV2                   15.484           0.249           0.256         1.159%         71.272%             0.000              1       [anynet/s4_gpu_b2_relu/Relu;anynet/s4_gpu_b2_add/add]:103
+           TfLiteHexagonDelegate                   15.739           0.007           0.011         0.052%         71.325%             0.000              1       [anynet/s4_dsp_b3_relu/Relu;anynet/s4_dsp_b3_add/add]:99
+                   CONCATENATION                   15.752           2.648           2.684        12.177%         83.502%             0.000              1       [anynet/s4_cpu_mp_end_concat/concat]:92
+                            MEAN                   18.436           0.453           0.492         2.232%         85.734%             0.000              1       [anynet/head_cpu_gap/Mean]:93
+                 FULLY_CONNECTED                   18.930           2.121           3.142        14.253%         99.986%             0.000              1       [StatefulPartitionedCall:01]:94
+                        QUANTIZE                   22.072           0.003           0.003         0.014%        100.000%             0.000              1       [StatefulPartitionedCall:0]:95
+
+============================== Top by Computation Time ==============================
+                     [node type]                  [start]         [first]        [avg ms]            [%]          [cdf%]          [mem KB]      [times called]  [Name]
+                   CONCATENATION                    4.332           3.750           3.809        17.281%         17.281%             0.000              1       [anynet/s1_cpu_mp_start_mp_end_concat/concat]:20
+                   CONCATENATION                   11.770           3.639           3.714        16.847%         34.128%             0.000              1       [anynet/s3_cpu_mp_start_mp_end_concat/concat]:74
+                         CONV_2D                    0.117           3.730           3.640        16.512%         50.640%             0.000              1       [anynet/st_cpu_relu/Relu;anynet/st_cpu_bn/FusedBatchNormV3;anynet/s2_gpu_b1_0_bn/FusedBatchNormV3/ReadVariableOp;anynet/st_cpu_conv/BiasAdd;anynet/s2_gpu_b3_1_bn/FusedBatchNormV3;anynet/st_cpu_conv/Conv2D]:1
+                 FULLY_CONNECTED                   18.930           2.121           3.142        14.253%         64.892%             0.000              1       [StatefulPartitionedCall:01]:94
+                   CONCATENATION                    8.636           2.746           2.788        12.645%         77.537%             0.000              1       [anynet/s2_cpu_mp_start_mp_end_concat/concat]:41
+                   CONCATENATION                   15.752           2.648           2.684        12.177%         89.714%             0.000              1       [anynet/s4_cpu_mp_end_concat/concat]:92
+                            MEAN                   18.436           0.453           0.492         2.232%         91.946%             0.000              1       [anynet/head_cpu_gap/Mean]:93
+             TfLiteGpuDelegateV2                    8.152           0.482           0.484         2.196%         94.142%             0.000              1       [anynet/s2_gpu_b3_relu/Relu;anynet/s2_gpu_b3_add/add]:101
+             TfLiteGpuDelegateV2                    3.943           0.384           0.388         1.760%         95.902%             0.000              1       [anynet/s1_gpu_b2_relu/Relu;anynet/s1_gpu_b2_add/add]:100
+             TfLiteGpuDelegateV2                   11.434           0.325           0.336         1.522%         97.423%             0.000              1       [anynet/s3_gpu_b4_relu/Relu;anynet/s3_gpu_b4_add/add]:102
+
+Number of nodes executed: 18
+============================== Summary by node type ==============================
+                     [Node type]          [count]         [avg ms]          [avg %]         [cdf %]       [mem KB]      [times called]
+                   CONCATENATION                4           12.994          58.954%         58.954%          0.000              4
+                         CONV_2D                1            3.640          16.515%         75.468%          0.000              1
+                 FULLY_CONNECTED                1            3.142          14.255%         89.724%          0.000              1
+             TfLiteGpuDelegateV2                4            1.462           6.633%         96.357%          0.000              4
+                            MEAN                1            0.492           2.232%         98.589%          0.000              1
+                     MAX_POOL_2D                1            0.176           0.799%         99.388%          0.000              1
+                        QUANTIZE                2            0.096           0.436%         99.823%          0.000              2
+           TfLiteHexagonDelegate                4            0.039           0.177%        100.000%          0.000              4
+
+Timings (microseconds): count=2 first=20835 curr=23255 min=20835 max=23255 avg=22045 std=1210
+Memory (bytes): count=0
+18 nodes observed
