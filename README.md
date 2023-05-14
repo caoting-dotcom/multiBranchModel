@@ -152,7 +152,7 @@ mv ${WRITE_DIR}/val_500_0.50_90.ffcv ${path_to_imagenet}/val.ffcv
 
 We provide trained model weights for [configs/mi](configs/mi) at [zenodo](https://zenodo.org/record/7923746). After downloading, extract the models and mount the models, configs and datasets to docker container with:
 ```
-docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet -v ${path_to_models}:/models --net host --name stretch-ae --shm-size=32g kalineid/nn_stretch /bin/bash
+docker run -it -v $(pwd)/configs:/data -v ${path_to_imagenet}:/imagenet -v ${path_to_models}:/models --net host --name stretch-ae --shm-size=32g --gpus all kalineid/nn_stretch /bin/bash
 ```
 
 Note that `--shm-size=xxx` is needed. The default 64M shared memory is not enough for the pytorch dataloader.
