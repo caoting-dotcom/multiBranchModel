@@ -1,5 +1,19 @@
-This repo includes the implementation for paper "NN-Stretch: Automatic Neural Network Branching for
-Parallel Inference on Heterogeneous Multi-Processors"
+This repo includes the implementation for our *MobiSys'23* paper "NN-Stretch: Automatic Neural Network Branching for
+Parallel Inference on Heterogeneous Multi-Processors". 
+
+The bibtex for the paper is:
+
+```
+@inproceedings{10.1145/3581791.3596870,
+author = {Wei, Jianyu and Cao, Ting and Cao, Shijie and Jiang, Shiqi and Fu, Shaowei and Yang, Mao and Zhang, Yanyong and Liu, Yunxin},
+title = {NN-Stretch: Automatic Neural Network Branching for Parallel Inference on Heterogeneous Multi-Processors},
+year = {2023},
+doi = {10.1145/3581791.3596870},
+pages = {70–83},
+location = {Helsinki, Finland},
+series = {MobiSys '23}
+}
+```
 
 # End-to-End Pipeline
 
